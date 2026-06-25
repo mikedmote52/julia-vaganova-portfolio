@@ -8,42 +8,107 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#201712; --paper:#fbf8f4; --ink:#f3ede7; --muted:#d1c5bb; --line:rgba(243,237,231,.12); --moss: rgba(176, 159, 93, 0.22); --ember: rgba(94, 49, 28, 0.24); --panel: rgba(26, 20, 16, 0.74); }
-    * { box-sizing:border-box; } body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:radial-gradient(circle at top right, var(--moss), transparent 24rem),radial-gradient(circle at 8% 70%, var(--ember), transparent 30rem),linear-gradient(180deg,#1b130f 0%,#2f221a 100%); }
-    a { color:inherit; } .shell { width:min(1120px, calc(100vw - 32px)); margin:0 auto; padding:28px 0 56px; } .top { display:flex; justify-content:space-between; gap:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:18px; }
-    .hero { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; } .panel, figure { border:1px solid var(--line); border-radius:30px; background:var(--panel); overflow:hidden; box-shadow:0 24px 80px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
-    .panel { padding:30px; } .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; color:#e4d8aa; margin-bottom:10px; }
-    h1 { font-family:"Cormorant Garamond",serif; font-size:clamp(3.2rem,7vw,5.8rem); line-height:.92; margin:0 0 12px; } p { color:var(--muted); line-height:1.8; margin:0; }
-    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; } .pill { padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line); font-size:.82rem; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } figure { margin:0; } img { width:100%; height:100%; object-fit:cover; display:block; } figcaption { padding:12px 14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(176,159,93,0.06), rgba(18,18,18,0.55)); } .actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:0 16px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem; } .primary { background:#f3ede7; color:#18120f; } .secondary { border:1px solid var(--line); background:rgba(255,255,255,.05); }
-    @media (max-width:900px) { .hero, .grid { grid-template-columns:1fr; } }
+    :root{
+      --ink:#f3ece2;
+      --muted:#d0c3b5;
+      --line:rgba(243,236,226,.12);
+      --panel:rgba(28,22,18,.78);
+      --moss:rgba(154,143,91,.24);
+      --ember:rgba(98,58,35,.22);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top right, var(--moss), transparent 26rem),
+        radial-gradient(circle at 15% 78%, var(--ember), transparent 26rem),
+        linear-gradient(180deg,#18110e 0%,#2f221a 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1180px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero,.mosaic,.contact{display:grid;gap:18px}
+    .hero{grid-template-columns:.88fr 1.12fr}
+    .mosaic{grid-template-columns:1.1fr .9fr}
+    .copy,.frame,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:var(--panel);box-shadow:0 24px 90px rgba(0,0,0,.28);backdrop-filter:blur(10px)}
+    .copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:#e3d7a8;margin-bottom:10px}
+    h1,h2{margin:0;font-family:"Cormorant Garamond",serif;line-height:.92}
+    h1{font-size:clamp(3.2rem,7vw,5.8rem);margin-bottom:16px;max-width:8ch}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    p{margin:0;color:var(--muted);line-height:1.84}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button.primary{background:#f3ece2;color:#16110e}
+    .button.secondary{border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .frame img{width:100%;display:block;object-fit:cover}
+    .large img{min-height:670px}
+    .small img{min-height:320px}
+    .caption{padding:14px 16px 18px;color:var(--muted)}
+    .caption strong{display:block;margin-bottom:4px;color:var(--ink)}
+    .stack{display:grid;gap:18px}
+    .contact{grid-template-columns:1fr auto;padding:24px 26px;align-items:center}
+    .smalltext{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.mosaic,.contact{grid-template-columns:1fr}
+      .large img,.small img{min-height:auto}
+    }
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><div>Julia Vaganova</div><div>Artistic & Conceptual</div></div>
     <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">Portfolio Category</div>
-        <h1>Artistic & conceptual.</h1>
-        <p>Julia's artistic edit is for mood-driven, concept-led work. It highlights stronger stylization, visual storytelling, and the kind of imagery that feels more editorial and expressive than straightforward commercial content.</p>
-        <div class="meta"><div class="pill">concept</div><div class="pill">creative beauty</div><div class="pill">mood</div><div class="pill">story image</div></div>
+      <div class="copy">
+        <div>
+          <div class="eyebrow">Artistic Portfolio</div>
+          <h1>More stylized, more atmospheric, more interpretive.</h1>
+          <p>This page is built around Julia's most concept-led imagery. The layout is looser and more cinematic because these photographs are not meant to read like clean commercial frames. They rely on texture, mood, symbolism, and visual storytelling.</p>
+        </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <figure><img src="assets/gold-face.jpg" alt="Gold face conceptual portrait"><figcaption>Textured concept beauty</figcaption></figure>
+      <div class="frame large">
+        <img src="assets/gold-face.jpg" alt="Julia gold face conceptual portrait">
+        <div class="caption"><strong>Concept beauty</strong>Texture and transformation carrying the entire frame.</div>
+      </div>
     </section>
-    <section class="grid">
-      <figure><img src="assets/wet-chain.jpg" alt="Wet chain portrait"><figcaption>Darker conceptual beauty</figcaption></figure>
-      <figure><img src="assets/apple-headpiece.jpg" alt="Apple headpiece concept image"><figcaption>Styled visual concept</figcaption></figure>
-      <figure><img src="assets/pink-silhouette.jpg" alt="Pink silhouette fashion"><figcaption>Graphic set with sculptural posing</figcaption></figure>
-      <figure><img src="assets/colonnade-coat.jpg" alt="Julia in a coat by columns"><figcaption>Character-driven location image</figcaption></figure>
-      <figure><img src="assets/beach-bw.jpg" alt="Julia in beach black and white image"><figcaption>Dreamlike beach mood and atmosphere</figcaption></figure>
-      <figure><img src="assets/dog-bw-profile.jpg" alt="Julia and dog black and white"><figcaption>Narrative portrait with a surreal edge</figcaption></figure>
+    <section class="mosaic" style="margin-top:18px">
+      <div class="stack">
+        <div class="frame small">
+          <img src="assets/wet-chain.jpg" alt="Julia wet chain portrait">
+          <div class="caption"><strong>Darker mood</strong>Tension, body language, and atmosphere over straightforward pose.</div>
+        </div>
+        <div class="frame small">
+          <img src="assets/beach-bw.jpg" alt="Julia beach black and white image">
+          <div class="caption"><strong>Dreamlike frame</strong>Soft narrative mood with more emotional ambiguity.</div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="frame small">
+          <img src="assets/apple-headpiece.jpg" alt="Julia apple headpiece conceptual image">
+          <div class="caption"><strong>Symbol-driven styling</strong>Stronger concept image with an editorial art direction feel.</div>
+        </div>
+        <div class="frame small">
+          <img src="assets/pink-silhouette.jpg" alt="Julia pink silhouette image">
+          <div class="caption"><strong>Graphic experimentation</strong>Shape, color, and pose working as design elements.</div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" style="margin-top:18px">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the brief calls for mood, concept, or image-making.</h2>
+        <div class="smalltext">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
     </section>
   </main>
 </body>

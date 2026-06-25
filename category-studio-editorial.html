@@ -6,44 +6,105 @@
   <title>Julia Vaganova | Studio Editorial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#f0ece7; --paper:#faf8f5; --ink:#151210; --muted:#655c55; --line:rgba(21,18,16,.12); --slate: rgba(76, 86, 105, 0.18); --whiteglow: rgba(255,255,255,0.68); }
-    * { box-sizing:border-box; } body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:radial-gradient(circle at top left, var(--slate), transparent 24rem),radial-gradient(circle at 80% 20%, var(--whiteglow), transparent 26rem),linear-gradient(180deg,#f1ede8 0%,#e8dfd6 100%); }
-    a { color:inherit; } .shell { width:min(1120px, calc(100vw - 32px)); margin:0 auto; padding:28px 0 56px; } .top { display:flex; justify-content:space-between; gap:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:18px; }
-    .hero { display:grid; grid-template-columns:.95fr 1.05fr; gap:18px; margin-bottom:18px; } .panel, figure { border:1px solid var(--line); border-radius:30px; background:rgba(250,248,245,.72); overflow:hidden; box-shadow:0 20px 70px rgba(50,33,20,.08); backdrop-filter: blur(10px); }
-    .panel { padding:30px; } .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; color:var(--muted); margin-bottom:10px; }
-    h1 { font-family:"Cormorant Garamond",serif; font-size:clamp(3.2rem,7vw,5.8rem); line-height:.92; margin:0 0 12px; } p { color:var(--muted); line-height:1.8; margin:0; }
-    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; } .pill { padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.8); border:1px solid var(--line); font-size:.82rem; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } figure { margin:0; } img { width:100%; height:100%; object-fit:cover; display:block; } figcaption { padding:12px 14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(76,86,105,0.08), rgba(255,255,255,0.55)); } .actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:0 16px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem; } .primary { background:var(--ink); color:#fff; } .secondary { border:1px solid var(--line); background:#fff; }
-    @media (max-width:900px) { .hero, .grid { grid-template-columns:1fr; } }
+    :root{
+      --ink:#141311;
+      --muted:#67615a;
+      --line:rgba(20,19,17,.12);
+      --paper:#f2eee8;
+      --panel:#faf8f5;
+      --slate:#d9dee5;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(135deg, rgba(217,222,229,.42), transparent 28rem),
+        linear-gradient(180deg,#f3f0eb 0%,#e9e1d8 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1180px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .copy,.grid-wrap,.contact{border:1px solid var(--line);border-radius:30px;background:rgba(250,248,245,.82);box-shadow:0 18px 56px rgba(48,39,28,.08)}
+    .copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--muted);margin-bottom:10px}
+    h1,h2{margin:0;font-family:"Space Grotesk",sans-serif;line-height:.96}
+    h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:16px;max-width:9ch}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    p{margin:0;color:var(--muted);line-height:1.82}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button.primary{background:var(--ink);color:#fff}
+    .button.secondary{border:1px solid var(--line);background:#fff}
+    .grid-wrap{padding:16px}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .stack{display:grid;gap:14px}
+    figure{margin:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+    figure img{width:100%;display:block;object-fit:cover}
+    .tall img{min-height:640px}
+    .mid img{min-height:310px}
+    figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
+    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.grid,.contact{grid-template-columns:1fr}
+      .tall img,.mid img{min-height:auto}
+    }
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><div>Julia Vaganova</div><div>Studio Editorial</div></div>
     <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">Portfolio Category</div>
-        <h1>Studio editorial.</h1>
-        <p>Julia's studio editorial edit is built around shape, movement, and stronger fashion posing. The controlled studio setting keeps the attention on her line, expression, and editorial presence.</p>
-        <div class="meta"><div class="pill">studio</div><div class="pill">posing</div><div class="pill">monochrome</div><div class="pill">fashion line</div></div>
+      <div class="copy">
+        <div>
+          <div class="eyebrow">Studio Editorial</div>
+          <h1>Shape, movement, and graphic control.</h1>
+          <p>This page is built around form. The studio setting strips away location distraction and lets the photographs focus on Julia's line, pose transitions, and stronger editorial energy. It is meant to feel sharper, cleaner, and more directional than the softer categories.</p>
+        </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <figure><img src="assets/studio-stool-bw.jpg" alt="Studio black and white image"><figcaption>Controlled editorial studio frame</figcaption></figure>
+      <div class="grid-wrap">
+        <div class="grid">
+          <figure class="tall"><img src="assets/studio-stool-bw.jpg" alt="Julia studio black and white portrait"><figcaption>Controlled monochrome pose with editorial structure.</figcaption></figure>
+          <div class="stack">
+            <figure class="mid"><img src="assets/studio-body-1.jpg" alt="Julia studio body line image"><figcaption>Long line and directional movement.</figcaption></figure>
+            <figure class="mid"><img src="assets/studio-body-2.jpg" alt="Julia studio pose image"><figcaption>Sharper angle work and body-led studio polish.</figcaption></figure>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="grid">
-      <figure><img src="assets/studio-body-1.jpg" alt="Studio body image"><figcaption>Body line and directional movement</figcaption></figure>
-      <figure><img src="assets/studio-body-2.jpg" alt="Studio body image two"><figcaption>Long clean shape with sharper posing</figcaption></figure>
-      <figure><img src="assets/studio-fringe.jpg" alt="Fringe jacket studio image"><figcaption>Texture and edge for fashion briefs</figcaption></figure>
-      <figure><img src="assets/pink-silhouette.jpg" alt="Pink silhouette studio image"><figcaption>Graphic lighting and sculptural set styling</figcaption></figure>
-      <figure><img src="assets/athletic-fringe-1.jpg" alt="Julia fringe studio full-body frame"><figcaption>Full-body studio polish with editorial stance</figcaption></figure>
-      <figure><img src="assets/athletic-fringe-close.jpg" alt="Julia editorial close portrait in black fringe"><figcaption>Closer fashion crop with attitude</figcaption></figure>
+    <section class="hero" style="margin-top:18px">
+      <div class="grid-wrap">
+        <div class="grid">
+          <figure class="mid"><img src="assets/studio-fringe.jpg" alt="Julia fringe studio frame"><figcaption>Texture and fashion attitude with a stronger edge.</figcaption></figure>
+          <figure class="mid"><img src="assets/athletic-fringe-close.jpg" alt="Julia editorial close portrait"><figcaption>Closer editorial crop with attitude and restraint.</figcaption></figure>
+        </div>
+      </div>
+      <div class="grid-wrap">
+        <div class="grid">
+          <figure class="mid"><img src="assets/pink-silhouette.jpg" alt="Julia pink silhouette image"><figcaption>Graphic studio concept with sculptural framing.</figcaption></figure>
+          <figure class="mid"><img src="assets/athletic-fringe-1.jpg" alt="Julia full body fringe studio frame"><figcaption>Full-body pose that reads fashion-first and precise.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the client wants cleaner fashion structure.</h2>
+        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
     </section>
   </main>
 </body>

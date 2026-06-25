@@ -6,30 +6,113 @@
   <title>Julia Vaganova | Animal Work</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Spectral:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#14120f; --muted:#5f5d56; --line:rgba(20,18,15,.12); --forest:rgba(70,96,75,.18); --paper:rgba(247,245,240,.76); }
-    *{box-sizing:border-box} body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 15%, rgba(255,255,255,.7), transparent 20rem),radial-gradient(circle at 85% 20%, var(--forest), transparent 24rem),linear-gradient(180deg,#eef1eb 0%,#e3e7df 100%)}
-    a{color:inherit}.shell{width:min(1120px,calc(100vw - 32px));margin:0 auto;padding:28px 0 56px}.top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:18px}
-    .hero,.grid{display:grid;gap:18px}.hero{grid-template-columns:1fr 1fr;margin-bottom:18px}.grid{grid-template-columns:repeat(3,1fr)}
-    .panel,figure{border:1px solid var(--line);border-radius:30px;background:var(--paper);overflow:hidden;box-shadow:0 20px 70px rgba(31,38,28,.08);backdrop-filter:blur(10px)} .panel{padding:30px} figure{margin:0}
-    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;color:var(--muted);margin-bottom:10px} h1{font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,7vw,5.8rem);line-height:.92;margin:0 0 12px}
-    p{color:var(--muted);line-height:1.8;margin:0}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.84);border:1px solid var(--line);font-size:.82rem}
-    img{width:100%;height:100%;object-fit:cover;display:block} figcaption{padding:12px 14px 16px;color:var(--muted);font-size:.92rem;background:linear-gradient(180deg, rgba(70,96,75,.08), rgba(255,255,255,.58))}
-    .actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem}.primary{background:var(--ink);color:#fff}.secondary{border:1px solid var(--line);background:#fff}
-    @media (max-width:900px){.hero,.grid{grid-template-columns:1fr}}
+    :root{
+      --ink:#191712;
+      --muted:#625c53;
+      --line:rgba(25,23,18,.12);
+      --cream:#f5f2eb;
+      --earth:#dde0d6;
+      --white:#fffdf9;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.8), transparent 24rem),
+        radial-gradient(circle at 84% 18%, rgba(221,224,214,.9), transparent 30rem),
+        linear-gradient(180deg,#f5f4ef 0%,#e8ebe3 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1140px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .story{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px}
+    .portrait,.copy,.pair,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:rgba(255,253,249,.82);box-shadow:0 18px 60px rgba(37,41,33,.08)}
+    .portrait img,.pair img{width:100%;height:100%;display:block;object-fit:cover}
+    .portrait img{min-height:670px}
+    .copy{padding:34px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--muted);margin-bottom:10px}
+    h1,h2{margin:0;font-family:"Spectral",serif;line-height:.96}
+    h1{font-size:clamp(3rem,7vw,5.2rem);margin-bottom:16px;max-width:8ch}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    p{margin:0;color:var(--muted);line-height:1.84}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button.primary{background:var(--ink);color:#fff}
+    .button.secondary{border:1px solid var(--line);background:#fff}
+    .notes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .note{padding:14px;border-radius:18px;background:linear-gradient(180deg, rgba(221,224,214,.42), rgba(255,255,255,.94));border:1px solid var(--line)}
+    .note strong{display:block;margin-bottom:6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.14em}
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .pair{display:grid;grid-template-rows:auto auto}
+    .caption{padding:14px 16px 18px}
+    .caption strong{display:block;margin-bottom:4px}
+    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:linear-gradient(135deg, rgba(255,255,255,.88), rgba(221,224,214,.58))}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:920px){
+      .story,.gallery,.contact,.notes{grid-template-columns:1fr}
+      .portrait img{min-height:auto}
+    }
   </style>
 </head>
-<body><main class="shell"><div class="top"><div>Julia Vaganova</div><div>Animal Work</div></div>
-<section class="hero">
-  <div class="panel"><div class="eyebrow">Portfolio Category</div><h1>Animal work.</h1><p>Julia's animal work highlights calm control, natural connection, and confidence in a shared frame. These images show that she can stay elegant, present, and emotionally engaged while working closely with animals on camera.</p><div class="meta"><div class="pill">animals</div><div class="pill">comfort</div><div class="pill">connection</div><div class="pill">control</div></div><div class="actions"><a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a><a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a><a class="button secondary" href="index.html">Back to Portal</a></div></div>
-  <figure><img src="assets/dog-seated-black.jpg" alt="Julia with a German Shepherd"><figcaption>Elegant animal-inclusive hero image</figcaption></figure>
-</section>
-<section class="grid">
-  <figure><img src="assets/animal-dog-1.jpg" alt="Julia seated beside a German Shepherd"><figcaption>Confident seated pose with calm animal handling</figcaption></figure>
-  <figure><img src="assets/animal-dog-2.jpg" alt="Julia shaking paws with a German Shepherd"><figcaption>Friendly interaction and trust on camera</figcaption></figure>
-  <figure><img src="assets/animal-dog-3.jpg" alt="Julia and German Shepherd portrait"><figcaption>Closer portrait with strong animal presence</figcaption></figure>
-  <figure><img src="assets/animal-dog-4.jpg" alt="Julia with German Shepherd in black and white"><figcaption>Moody monochrome animal portrait</figcaption></figure>
-  <figure><img src="assets/dog-bw-profile.jpg" alt="Julia and dog black and white"><figcaption>Cinematic connection in a shared frame</figcaption></figure>
-  <figure><img src="assets/dog-seated-black.jpg" alt="Julia and dog full-body image"><figcaption>Controlled full-body pose with a large dog</figcaption></figure>
-</section></main></body></html>
+<body>
+  <main class="shell">
+    <div class="top"><div>Julia Vaganova</div><div>Animal Work</div></div>
+
+    <section class="story">
+      <div class="portrait">
+        <img src="assets/dog-seated-black.jpg" alt="Julia with German Shepherd in black outfit">
+      </div>
+      <div class="copy">
+        <div class="eyebrow">Animal Portfolio</div>
+        <h1>Calm, connected, and fully present in the frame.</h1>
+        <p>This page is built around trust and control. The strongest animal images in Julia's portfolio are not only about the dog itself, but about the way she holds the frame: calm, elegant, emotionally engaged, and believable in a shared scene.</p>
+        <div class="notes">
+          <div class="note"><strong>Strength</strong>Comfortable physical presence with animals</div>
+          <div class="note"><strong>Read</strong>Warm, poised, and confident under attention</div>
+          <div class="note"><strong>Use Case</strong>Pet brands, lifestyle campaigns, story-led shoots</div>
+          <div class="note"><strong>Contact</strong><a href="mailto:vaganovajulia88@gmail.com">Email Julia</a></div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+          <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
+          <a class="button secondary" href="index.html">Back to Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="pair">
+        <img src="assets/animal-dog-2.jpg" alt="Julia with German Shepherd shaking paws">
+        <div class="caption"><strong>Interaction</strong>Shows ease, trust, and a natural shared moment on camera.</div>
+      </div>
+      <div class="pair">
+        <img src="assets/dog-bw-profile.jpg" alt="Julia and dog in black and white portrait">
+        <div class="caption"><strong>Mood</strong>Cinematic intimacy that feels more story-led and emotionally memorable.</div>
+      </div>
+      <div class="pair">
+        <img src="assets/animal-dog-1.jpg" alt="Julia seated next to German Shepherd">
+        <div class="caption"><strong>Control</strong>Elegant posture with strong composure beside a large animal.</div>
+      </div>
+      <div class="pair">
+        <img src="assets/animal-dog-4.jpg" alt="Julia with German Shepherd monochrome portrait">
+        <div class="caption"><strong>Character</strong>More stylized animal work with a stronger editorial edge.</div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the client needs comfort, emotion, and control with animals.</h2>
+        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

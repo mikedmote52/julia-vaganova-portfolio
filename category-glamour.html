@@ -8,28 +8,79 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#0a0a0a; --panel:#121212; --ink:#f5efe7; --muted:#b8aba0; --line:rgba(245,239,231,.12); --ruby: rgba(177,20,36,.22); --gold: rgba(212, 168, 104, 0.12); }
-    * { box-sizing:border-box; } body { margin:0; font-family:"Archivo",sans-serif; color:var(--ink); background:radial-gradient(circle at top right, var(--ruby), transparent 28rem),radial-gradient(circle at 18% 78%, var(--gold), transparent 26rem),linear-gradient(180deg, #14090c 0%, #070707 100%); }
-    a { color:inherit; } .shell { width:min(1160px, calc(100vw - 28px)); margin:0 auto; padding:26px 0 56px; } .top { display:flex; justify-content:space-between; gap:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:18px; }
-    .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; margin-bottom:18px; } .panel, figure { border:1px solid var(--line); border-radius:30px; background:linear-gradient(180deg, rgba(20,20,20,.94), rgba(10,10,10,.94)); overflow:hidden; box-shadow:0 30px 90px rgba(0,0,0,.35); }
-    .panel { padding:30px; } .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; color:#d4a868; margin-bottom:10px; }
-    h1 { font-family:"Bodoni Moda",serif; font-size:clamp(3.2rem,7vw,5.8rem); line-height:.92; margin:0 0 12px; } p { color:var(--muted); line-height:1.8; margin:0; }
-    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; } .pill { padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.03); border:1px solid var(--line); font-size:.82rem; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } figure { margin:0; } img { width:100%; height:100%; object-fit:cover; display:block; } figcaption { padding:12px 14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(177,20,36,0.06), rgba(18,18,18,0.84)); } .actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:0 16px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem; } .primary { background:linear-gradient(135deg,#b11424,#d62b3f); color:#fff; } .secondary { border:1px solid var(--line); }
-    @media (max-width:900px) { .hero, .grid { grid-template-columns:1fr; } }
+    :root{
+      --ink:#f7efe7;
+      --muted:#beada0;
+      --line:rgba(247,239,231,.12);
+      --red:#b21b2d;
+      --black:#0b0a0a;
+      --panel:rgba(18,17,17,.92);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Archivo",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(178,27,45,.22), transparent 24rem),
+        radial-gradient(circle at 10% 80%, rgba(255,255,255,.06), transparent 20rem),
+        linear-gradient(180deg,#120b0d 0%,#050505 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1220px,calc(100vw - 28px));margin:0 auto;padding:24px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}
+    .poster,.copy,.strip,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:var(--panel);box-shadow:0 28px 90px rgba(0,0,0,.36)}
+    .poster img{width:100%;height:100%;display:block;object-fit:cover;min-height:700px}
+    .copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;color:#d6a768;margin-bottom:12px}
+    h1,h2{margin:0;font-family:"Bodoni Moda",serif;line-height:.94}
+    h1{font-size:clamp(3.4rem,7vw,6.4rem);max-width:7ch;margin-bottom:16px}
+    h2{font-size:clamp(2rem,4vw,3.2rem)}
+    p{margin:0;color:var(--muted);line-height:1.82}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .stat{padding:14px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .stat strong{display:block;margin-bottom:6px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#f7efe7}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem}
+    .button.primary{background:linear-gradient(135deg,var(--red),#d52d45);color:#fff}
+    .button.secondary{border:1px solid var(--line)}
+    .section{margin-top:18px}
+    .strip{padding:18px}
+    .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+    figure{margin:0;background:#100f0f;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+    figure img{width:100%;display:block;object-fit:cover}
+    .tall img{min-height:520px}
+    .short img{min-height:250px}
+    figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
+    .contact{margin-top:18px;padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.gallery,.contact,.stats{grid-template-columns:1fr}
+      .poster img,.tall img,.short img{min-height:auto}
+    }
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><div>Julia Vaganova</div><div>Glamour</div></div>
+
     <section class="hero">
-      <figure><img src="assets/red-gown-2.jpg" alt="Julia in red gown"><figcaption>Full-glamour statement frame</figcaption></figure>
-      <div class="panel">
-        <div class="eyebrow">Portfolio Category</div>
-        <h1>Glamour.</h1>
-        <p>Julia's glamour edit is designed for eveningwear, statement styling, polished beauty, and a more luxurious on-camera presence. It is the right page to open when the brief calls for more impact from the start.</p>
-        <div class="meta"><div class="pill">gowns</div><div class="pill">bold color</div><div class="pill">evening</div><div class="pill">luxury</div></div>
+      <div class="poster">
+        <img src="assets/red-gown-2.jpg" alt="Julia in dramatic red gown">
+      </div>
+      <div class="copy">
+        <div>
+          <div class="eyebrow">Glamour Edit</div>
+          <h1>Stronger styling. Sharper entrance.</h1>
+          <p>This page is built around the images where Julia feels most elevated, styled, and visually commanding. It is meant for clients looking for eveningwear, event-facing polish, or a more fashion-forward glamour read.</p>
+          <div class="stats">
+            <div class="stat"><strong>Mood</strong>luxury, impact, confidence</div>
+            <div class="stat"><strong>Best For</strong>eventwear, couture, statement beauty</div>
+            <div class="stat"><strong>Strength</strong>high-glamour presence</div>
+            <div class="stat"><strong>Contact</strong><a href="mailto:vaganovajulia88@gmail.com">email Julia</a></div>
+          </div>
+        </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
@@ -37,16 +88,27 @@
         </div>
       </div>
     </section>
-    <section class="grid">
-      <figure><img src="assets/red-gown-1.jpg" alt="Red gown glamour image"><figcaption>Dress detail and strong glamour styling</figcaption></figure>
-      <figure><img src="assets/red-gown-3.jpg" alt="Red gown standing image"><figcaption>Head-to-toe silhouette with formal pose</figcaption></figure>
-      <figure><img src="assets/red-gown-close.jpg" alt="Red gown close portrait"><figcaption>Luxury face and styling finish</figcaption></figure>
-      <figure><img src="assets/red-dress-hotel.jpg" alt="Julia in red slit dress in hotel"><figcaption>Event-ready hotel glamour</figcaption></figure>
-      <figure><img src="assets/glamour-red-2.jpg" alt="Julia in red dress at event"><figcaption>Strong eveningwear with a live-event read</figcaption></figure>
-      <figure><img src="assets/glamour-party-1.jpg" alt="Julia in satin dress holding a cake"><figcaption>Party glamour with playful nightlife styling</figcaption></figure>
-      <figure><img src="assets/glamour-party-2.jpg" alt="Julia in satin dress with wine glass"><figcaption>Evening social setting with polished styling</figcaption></figure>
-      <figure><img src="assets/glamour-city-1.jpg" alt="Julia in black dress on city street"><figcaption>City-night glamour with fitted silhouette</figcaption></figure>
-      <figure><img src="assets/glamour-city-2.jpg" alt="Julia in black dress outdoors"><figcaption>Street-side glamour with soft wind movement</figcaption></figure>
+
+    <section class="section strip">
+      <div class="gallery">
+        <figure class="tall"><img src="assets/red-gown-1.jpg" alt="Julia in red gown pose"><figcaption>Statement gown image with immediate visual authority.</figcaption></figure>
+        <figure class="short"><img src="assets/red-gown-close.jpg" alt="Julia glamour close portrait"><figcaption>Face, styling, and a more luxurious beauty finish.</figcaption></figure>
+        <figure class="tall"><img src="assets/glamour-city-1.jpg" alt="Julia in black dress on city street"><figcaption>City-night glamour with a fitted, fashion-led silhouette.</figcaption></figure>
+        <figure class="short"><img src="assets/glamour-party-1.jpg" alt="Julia in satin dress with cake"><figcaption>Playful nightlife glamour with polished styling.</figcaption></figure>
+        <figure class="tall"><img src="assets/glamour-red-2.jpg" alt="Julia in red dress at event"><figcaption>Event-facing glamour that still feels editorial.</figcaption></figure>
+        <figure class="short"><img src="assets/red-dress-hotel.jpg" alt="Julia in hotel red dress"><figcaption>Refined hotel or campaign-style glamour frame.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the brief needs more presence and polish.</h2>
+        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
     </section>
   </main>
 </body>

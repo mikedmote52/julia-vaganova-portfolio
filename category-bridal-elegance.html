@@ -8,55 +8,141 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#f4eee7; --paper:#fbf8f4; --ink:#1d1815; --muted:#6b625b; --line:rgba(29,24,21,0.12); --glow: rgba(255,255,255,0.72); --pearl: rgba(228, 219, 209, 0.66); }
-    * { box-sizing:border-box; } body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:
-      radial-gradient(circle at top right, var(--glow), transparent 24rem),
-      radial-gradient(circle at 12% 24%, var(--pearl), transparent 26rem),
-      linear-gradient(180deg,#f8f2ec 0%,#ede2d6 100%); }
-    a { color:inherit; } .shell { width:min(1120px, calc(100vw - 32px)); margin:0 auto; padding:28px 0 56px; }
-    .top { display:flex; justify-content:space-between; gap:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:18px; }
-    .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; margin-bottom:18px; }
-    .panel, figure { border:1px solid var(--line); border-radius:30px; background:rgba(251,248,244,.74); overflow:hidden; box-shadow:0 20px 70px rgba(50,33,20,.08); backdrop-filter: blur(12px); }
-    .panel { padding:30px; } .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; color:var(--muted); margin-bottom:10px; }
-    h1, h2 { font-family:"Cormorant Garamond",serif; margin:0; } h1 { font-size:clamp(3.3rem,7vw,6rem); line-height:.9; margin-bottom:12px; }
-    p { color:var(--muted); line-height:1.8; margin:0; } .hero img, .grid img { width:100%; height:100%; object-fit:cover; display:block; }
-    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; } .pill { padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.8); border:1px solid var(--line); font-size:.82rem; }
-    .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; } figure { margin:0; } figcaption { padding:12px 14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.55)); }
-    .actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; } .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:0 16px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem; }
-    .primary { background:var(--ink); color:#fff; } .secondary { border:1px solid var(--line); background:#fff; }
-    @media (max-width:900px) { .hero, .grid { grid-template-columns:1fr; } }
+    :root {
+      --ink:#211914;
+      --muted:#72675f;
+      --line:rgba(33,25,20,.1);
+      --paper:#faf6f1;
+      --glow:#f4ede5;
+      --champagne:#e9ddd0;
+      --white:#fffdfa;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.8), transparent 24rem),
+        radial-gradient(circle at 85% 12%, rgba(233,221,208,.75), transparent 30rem),
+        linear-gradient(180deg,#fbf7f3 0%,#efe5db 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1180px,calc(100vw - 32px));margin:0 auto;padding:26px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+    .intro,.hero-image,.frame,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:rgba(255,253,250,.76);box-shadow:0 22px 80px rgba(59,39,24,.08);backdrop-filter:blur(12px)}
+    .intro{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;color:var(--muted);margin-bottom:12px}
+    h1,h2{font-family:"Cormorant Garamond",serif;margin:0;line-height:.92}
+    h1{font-size:clamp(3.6rem,8vw,6.6rem);max-width:8ch;margin-bottom:14px}
+    h2{font-size:clamp(2.2rem,4vw,3.6rem)}
+    p{margin:0;color:var(--muted);line-height:1.82}
+    .hero-image img,.frame img{width:100%;height:100%;display:block;object-fit:cover}
+    .hero-image{position:relative;min-height:660px;background:var(--white)}
+    .hero-note{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;border-radius:22px;background:rgba(255,253,250,.86);border:1px solid rgba(33,25,20,.08)}
+    .hero-note strong{display:block;margin-bottom:6px;font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ink)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 22px}
+    .pill{padding:10px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.8);font-size:.82rem}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.94rem}
+    .button.primary{background:var(--ink);color:#fff}
+    .button.secondary{background:rgba(255,255,255,.74);border:1px solid var(--line)}
+    .section{margin-top:18px}
+    .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    .stack{display:grid;gap:18px}
+    .frame{background:rgba(255,255,255,.7)}
+    .frame.tall img{min-height:680px}
+    .frame.medium img{min-height:320px}
+    .caption{padding:14px 16px 18px;background:linear-gradient(180deg, rgba(255,255,255,.2), rgba(255,255,255,.7))}
+    .caption strong{display:block;margin-bottom:4px;font-size:.9rem}
+    .contact{padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:linear-gradient(135deg, rgba(255,255,255,.88), rgba(244,237,229,.94))}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.gallery,.contact{grid-template-columns:1fr}
+      .hero-image{min-height:420px}
+      .frame.tall img,.frame.medium img{min-height:auto}
+    }
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><div>Julia Vaganova</div><div>Bridal</div></div>
+
     <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">Portfolio Category</div>
-        <h1>Bridal.</h1>
-        <p>Julia's bridal edit focuses on romance, polish, and soft elegance. It brings together the images most suited to bridal fashion, wedding campaigns, and occasion-led bookings.</p>
-        <div class="meta"><div class="pill">bridal</div><div class="pill">wedding</div><div class="pill">romantic</div><div class="pill">occasion</div></div>
+      <div class="intro">
+        <div>
+          <div class="eyebrow">Bridal Portfolio</div>
+          <h1>Elegant, romantic, and ceremony-ready.</h1>
+          <p>Julia's bridal page is designed around softness, polish, and grace. The images here lead with the qualities bridal clients usually need first: clean beauty, refined posture, white styling, and a romantic on-camera presence that feels natural rather than overworked.</p>
+          <div class="meta">
+            <div class="pill">bridal fashion</div>
+            <div class="pill">wedding campaigns</div>
+            <div class="pill">occasionwear</div>
+            <div class="pill">romantic beauty</div>
+          </div>
+        </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <figure><img src="assets/white-halter-beauty.jpg" alt="Julia in white halter look"><figcaption>Clean bridal beauty / elegant profile</figcaption></figure>
+      <div class="hero-image">
+        <img src="assets/bridal-veil-2.jpg" alt="Julia in bridal veil by ornate architecture">
+        <div class="hero-note">
+          <strong>Why This Page Works</strong>
+          It opens with elegance first, then moves into beauty, veil movement, and destination-style bridal atmosphere.
+        </div>
+      </div>
     </section>
-    <section class="grid">
-      <figure><img src="assets/bridal-full-stairs.jpg" alt="Julia in a white bridal gown on stairs"><figcaption>Full bridal silhouette / venue-ready image</figcaption></figure>
-      <figure><img src="assets/bridal-seated-stairs.jpg" alt="Julia seated in white bridal gown"><figcaption>Romantic formal bridal portrait</figcaption></figure>
-      <figure><img src="assets/bridal-close-1.jpg" alt="Julia bridal beauty portrait one"><figcaption>Clean bridal beauty closeup</figcaption></figure>
-      <figure><img src="assets/bridal-close-2.jpg" alt="Julia bridal beauty portrait two"><figcaption>Soft bridal expression / sunlight</figcaption></figure>
-      <figure><img src="assets/bridal-veil-1.jpg" alt="Julia in bridal veil portrait"><figcaption>Veil styling / ceremony-driven portrait</figcaption></figure>
-      <figure><img src="assets/bridal-veil-2.jpg" alt="Julia in bridal veil full pose"><figcaption>Structured bridal pose with veil movement</figcaption></figure>
-      <figure><img src="assets/bridal-veil-3.jpg" alt="Julia in bridal veil by column"><figcaption>Bridal fashion / elegant location frame</figcaption></figure>
-      <figure><img src="assets/bridal-beach-2.jpg" alt="Julia beach bridal full body"><figcaption>Destination bridal / white dress full length</figcaption></figure>
-      <figure><img src="assets/bridal-beach-3.jpg" alt="Julia beach bridal portrait"><figcaption>Natural romantic bridal portrait</figcaption></figure>
-      <figure><img src="assets/bridal-beach-4.jpg" alt="Julia beach bridal on rocks"><figcaption>Editorial destination bridal setting</figcaption></figure>
-      <figure><img src="assets/bridal-beach-5.jpg" alt="Julia beach bridal close-up"><figcaption>Soft beach bridal beauty</figcaption></figure>
-      <figure><img src="assets/pearl-bw.jpg" alt="Julia black and white pearl portrait"><figcaption>Classic bridal detail / pearl elegance</figcaption></figure>
+
+    <section class="section gallery">
+      <div class="frame tall">
+        <img src="assets/bridal-full-stairs.jpg" alt="Julia in white bridal gown on stairs">
+        <div class="caption"><strong>Venue-led bridal image</strong>Full-length elegance with a strong ceremony or campaign feel.</div>
+      </div>
+      <div class="stack">
+        <div class="frame medium">
+          <img src="assets/bridal-close-1.jpg" alt="Julia bridal beauty close-up">
+          <div class="caption"><strong>Bridal beauty</strong>Clean skin, soft light, and polished expression.</div>
+        </div>
+        <div class="frame medium">
+          <img src="assets/bridal-seated-stairs.jpg" alt="Julia seated in bridal gown">
+          <div class="caption"><strong>Romantic portrait</strong>Formal poise with a softer, more intimate bridal mood.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery">
+      <div class="stack">
+        <div class="frame medium">
+          <img src="assets/bridal-veil-1.jpg" alt="Julia in bridal veil portrait">
+          <div class="caption"><strong>Veil styling</strong>Close bridal portrait with soft ceremony detail.</div>
+        </div>
+        <div class="frame medium">
+          <img src="assets/bridal-veil-3.jpg" alt="Julia in veil by columns">
+          <div class="caption"><strong>Editorial bridal</strong>Fashion-led bridal framing with classic architecture.</div>
+        </div>
+      </div>
+      <div class="frame tall">
+        <img src="assets/bridal-beach-4.jpg" alt="Julia in white dress on rocks by the ocean">
+        <div class="caption"><strong>Destination bridal</strong>Natural location drama for beach or resort wedding imagery.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Contact Julia</div>
+          <h2>Send the bridal page when the client needs elegance first.</h2>
+          <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+          <a class="button secondary" href="index.html">Back to Portal</a>
+        </div>
+      </div>
     </section>
   </main>
 </body>

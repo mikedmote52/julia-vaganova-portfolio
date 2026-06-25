@@ -6,33 +6,91 @@
   <title>Julia Vaganova | Athletic Appeal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Sora:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#16130f; --muted:#615a54; --line:rgba(22,19,15,.12); --sand:rgba(199,171,126,.16); --stone:rgba(101,97,90,.16); --paper:rgba(249,246,241,.76); }
-    *{box-sizing:border-box} body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at 20% 20%, rgba(255,255,255,.68), transparent 20rem),radial-gradient(circle at 84% 24%, var(--sand), transparent 24rem),radial-gradient(circle at 50% 80%, var(--stone), transparent 22rem),linear-gradient(180deg,#f2ede6 0%,#e6ddd1 100%)}
-    a{color:inherit}.shell{width:min(1120px,calc(100vw - 32px));margin:0 auto;padding:28px 0 56px}.top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:18px}
-    .hero,.grid{display:grid;gap:18px}.hero{grid-template-columns:1fr 1fr;margin-bottom:18px}.grid{grid-template-columns:repeat(3,1fr)}
-    .panel,figure{border:1px solid var(--line);border-radius:30px;background:var(--paper);overflow:hidden;box-shadow:0 20px 70px rgba(50,33,20,.08);backdrop-filter:blur(10px)} .panel{padding:30px} figure{margin:0}
-    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;color:var(--muted);margin-bottom:10px} h1{font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,7vw,5.8rem);line-height:.92;margin:0 0 12px}
-    p{color:var(--muted);line-height:1.8;margin:0}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.84);border:1px solid var(--line);font-size:.82rem}
-    img{width:100%;height:100%;object-fit:cover;display:block} figcaption{padding:12px 14px 16px;color:var(--muted);font-size:.92rem;background:linear-gradient(180deg, rgba(199,171,126,.08), rgba(255,255,255,.58))}
-    .actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem}.primary{background:var(--ink);color:#fff}.secondary{border:1px solid var(--line);background:#fff}
-    @media (max-width:900px){.hero,.grid{grid-template-columns:1fr}}
+    :root{
+      --ink:#17140f;
+      --muted:#665e55;
+      --line:rgba(23,20,15,.12);
+      --paper:#f6f1eb;
+      --sand:#e5dacb;
+      --stone:#d6d2cb;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(135deg, rgba(229,218,203,.5), transparent 28rem),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.7), transparent 22rem),
+        linear-gradient(180deg,#f4efe8 0%,#e7ddd2 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1180px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .board,.copy,.contact{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.72);box-shadow:0 18px 56px rgba(54,38,22,.08)}
+    .copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--muted);margin-bottom:10px}
+    h1,h2{margin:0;font-family:"Sora",sans-serif;line-height:.96}
+    h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:16px;max-width:8ch}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    p{margin:0;color:var(--muted);line-height:1.82}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button.primary{background:var(--ink);color:#fff}
+    .button.secondary{border:1px solid var(--line);background:#fff}
+    .board{padding:16px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    figure{margin:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+    figure img{width:100%;display:block;object-fit:cover}
+    .tall img{min-height:620px}
+    .wide img{min-height:300px}
+    figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
+    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.grid,.contact{grid-template-columns:1fr}
+      .tall img,.wide img{min-height:auto}
+    }
   </style>
 </head>
-<body><main class="shell"><div class="top"><div>Julia Vaganova</div><div>Athletic Appeal</div></div>
-<section class="hero">
-  <figure><img src="assets/athletic-bikini-1.jpg" alt="Julia athletic bikini studio image"><figcaption>Length, tone, and strong active silhouette</figcaption></figure>
-  <div class="panel"><div class="eyebrow">Portfolio Category</div><h1>Athletic appeal.</h1><p>Julia's athletic edit highlights movement, tone, line, and confident body-led posing. It is built for clients who want to see how she reads in fitness, activewear, swim, and stronger physical studio work.</p><div class="meta"><div class="pill">athletic</div><div class="pill">movement</div><div class="pill">fitness edge</div><div class="pill">body line</div></div><div class="actions"><a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a><a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a><a class="button secondary" href="index.html">Back to Portal</a></div></div>
-</section>
-<section class="grid">
-  <figure><img src="assets/athletic-fringe-1.jpg" alt="Julia in fringe jacket athletic studio image"><figcaption>Lean frame with editorial athletic edge</figcaption></figure>
-  <figure><img src="assets/athletic-fringe-2.jpg" alt="Julia jumping in studio athletic image"><figcaption>Movement and balance with stronger energy</figcaption></figure>
-  <figure><img src="assets/athletic-fringe-close.jpg" alt="Julia close athletic portrait in black fringe"><figcaption>Sharper styling with body-led focus</figcaption></figure>
-  <figure><img src="assets/athletic-bikini-2.jpg" alt="Julia studio athletic portrait"><figcaption>Clean studio swim image with softer confidence</figcaption></figure>
-  <figure><img src="assets/studio-body-1.jpg" alt="Julia athletic studio body line"><figcaption>Long line and controlled pose</figcaption></figure>
-  <figure><img src="assets/studio-body-2.jpg" alt="Julia athletic studio image two"><figcaption>Strong posture and active silhouette</figcaption></figure>
-  <figure><img src="assets/studio-fringe.jpg" alt="Julia in fringe studio look"><figcaption>Fashion-driven athletic crossover</figcaption></figure>
-  <figure><img src="assets/studio-stool-bw.jpg" alt="Julia monochrome studio frame"><figcaption>Monochrome structure and control</figcaption></figure>
-  <figure><img src="assets/soft-balcony.jpg" alt="Julia on balcony in soft pose"><figcaption>Softer body line for wellness or resort reads</figcaption></figure>
-</section></main></body></html>
+<body>
+  <main class="shell">
+    <div class="top"><div>Julia Vaganova</div><div>Athletic Appeal</div></div>
+    <section class="hero">
+      <div class="board">
+        <div class="grid">
+          <figure class="tall"><img src="assets/athletic-bikini-1.jpg" alt="Julia athletic bikini studio image"><figcaption>Long, active silhouette with immediate fitness appeal.</figcaption></figure>
+          <figure class="tall"><img src="assets/athletic-fringe-2.jpg" alt="Julia jumping in studio athletic image"><figcaption>Movement, control, and a stronger physical read.</figcaption></figure>
+          <figure class="wide"><img src="assets/athletic-fringe-close.jpg" alt="Julia athletic close portrait"><figcaption>Closer crop with sharper styling and body confidence.</figcaption></figure>
+          <figure class="wide"><img src="assets/studio-body-2.jpg" alt="Julia studio body line image"><figcaption>Directional studio strength with cleaner structure.</figcaption></figure>
+        </div>
+      </div>
+      <div class="copy">
+        <div>
+          <div class="eyebrow">Athletic Portfolio</div>
+          <h1>Movement, line, and physical confidence.</h1>
+          <p>This page is designed around the images where Julia looks strongest in motion and body-led styling. It is built for clients who want tone, athletic shape, energy, and a more active studio read rather than softness alone.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+          <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
+          <a class="button secondary" href="index.html">Back to Portal</a>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the brief needs tone, movement, and athletic edge.</h2>
+        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -6,47 +6,99 @@
   <title>Julia Vaganova | Beauty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Prata&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#f5efe8; --paper:#fcf9f6; --ink:#181411; --muted:#675d56; --line:rgba(24,20,17,.12); --rose: rgba(255, 219, 214, 0.36); --ivory: rgba(255,255,255,0.72); }
-    * { box-sizing:border-box; } body { margin:0; font-family:"Manrope",sans-serif; color:var(--ink); background:radial-gradient(circle at 85% 10%, var(--rose), transparent 22rem),radial-gradient(circle at 10% 75%, var(--ivory), transparent 24rem),linear-gradient(180deg,#f8f3ee 0%,#eee5db 100%); }
-    a { color:inherit; } .shell { width:min(1120px, calc(100vw - 32px)); margin:0 auto; padding:28px 0 56px; } .top { display:flex; justify-content:space-between; gap:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:18px; }
-    .hero { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; } .panel, figure { border:1px solid var(--line); border-radius:30px; background:rgba(252,249,246,.74); overflow:hidden; box-shadow:0 20px 70px rgba(50,33,20,.08); backdrop-filter: blur(12px); }
-    .panel { padding:30px; } .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.75rem; color:var(--muted); margin-bottom:10px; }
-    h1 { font-family:"Cormorant Garamond",serif; font-size:clamp(3.2rem,7vw,5.8rem); line-height:.9; margin:0 0 12px; } p { color:var(--muted); line-height:1.8; margin:0; }
-    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; } .pill { padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.8); border:1px solid var(--line); font-size:.82rem; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } figure { margin:0; } img { width:100%; height:100%; object-fit:cover; display:block; } figcaption { padding:12px 14px 16px; color:var(--muted); font-size:.92rem; background:linear-gradient(180deg, rgba(255,244,241,0.18), rgba(255,255,255,0.55)); } .actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
-    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:0 16px; border-radius:999px; text-decoration:none; font-weight:700; font-size:.92rem; } .primary { background:var(--ink); color:#fff; } .secondary { border:1px solid var(--line); background:#fff; }
-    @media (max-width:900px) { .hero, .grid { grid-template-columns:1fr; } }
+    :root{
+      --ink:#171210;
+      --muted:#6a5f57;
+      --line:rgba(23,18,16,.1);
+      --paper:#fcf8f3;
+      --rose:#f2ddd7;
+      --glass:rgba(255,255,255,.8);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(242,221,215,.8), transparent 24rem),
+        radial-gradient(circle at 15% 75%, rgba(255,255,255,.8), transparent 20rem),
+        linear-gradient(180deg,#fcf7f1 0%,#efe4da 100%);
+    }
+    a{color:inherit}
+    .shell{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
+    .hero{display:grid;grid-template-columns:.84fr 1.16fr;gap:18px}
+    .lead,.mosaic,.contact{border:1px solid var(--line);border-radius:30px;background:var(--glass);box-shadow:0 20px 60px rgba(55,36,24,.08);backdrop-filter:blur(12px)}
+    .lead{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--muted);margin-bottom:10px}
+    h1,h2{margin:0;font-family:"Prata",serif;line-height:1.02}
+    h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:16px;max-width:8ch}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    p{margin:0;color:var(--muted);line-height:1.82}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button.primary{background:var(--ink);color:#fff}
+    .button.secondary{border:1px solid var(--line);background:#fff}
+    .mosaic{padding:16px;display:grid;grid-template-columns:1.05fr .95fr;gap:14px}
+    .column{display:grid;gap:14px}
+    figure{margin:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff}
+    figure img{width:100%;display:block;object-fit:cover}
+    .tall img{min-height:640px}
+    .mid img{min-height:310px}
+    figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
+    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
+    @media (max-width:940px){
+      .hero,.mosaic,.contact{grid-template-columns:1fr}
+      .tall img,.mid img{min-height:auto}
+    }
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><div>Julia Vaganova</div><div>Beauty</div></div>
     <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">Portfolio Category</div>
-        <h1>Beauty.</h1>
-        <p>Julia's beauty edit is built around skin, structure, expression, and clean closeup work. It is the fastest way for a client to evaluate her face-forward range for beauty, skincare, and portrait-led campaigns.</p>
-        <div class="meta"><div class="pill">close-up</div><div class="pill">skincare</div><div class="pill">clean beauty</div><div class="pill">portrait</div></div>
+      <div class="lead">
+        <div>
+          <div class="eyebrow">Beauty Portfolio</div>
+          <h1>Face-first, clean, and camera-ready.</h1>
+          <p>This page is designed around Julia's facial structure, skin, expression, and beauty range. The layout stays clean so the eye lands where a beauty client wants it to: on close detail, polish, and the way she reads without unnecessary noise.</p>
+        </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <figure><img src="assets/headshot-warm.jpg" alt="Warm beauty headshot"><figcaption>Clean market-facing beauty portrait</figcaption></figure>
+      <div class="mosaic">
+        <figure class="tall"><img src="assets/headshot-warm.jpg" alt="Julia beauty headshot"><figcaption>Clean market-facing beauty portrait.</figcaption></figure>
+        <div class="column">
+          <figure class="mid"><img src="assets/beauty-pearl-clean.jpg" alt="Julia pearl beauty profile"><figcaption>Refined profile with polished skin and softness.</figcaption></figure>
+          <figure class="mid"><img src="assets/white-halter-beauty.jpg" alt="Julia white halter beauty image"><figcaption>Soft glow and elegant complexion detail.</figcaption></figure>
+        </div>
+      </div>
     </section>
-    <section class="grid">
-      <figure><img src="assets/beauty-natural-1.jpg" alt="Julia natural beauty portrait"><figcaption>Fresh natural beauty with minimal distraction</figcaption></figure>
-      <figure><img src="assets/beauty-hat-bw.jpg" alt="Black and white hat portrait"><figcaption>Elegant monochrome beauty framing</figcaption></figure>
-      <figure><img src="assets/white-halter-beauty.jpg" alt="White halter beauty portrait"><figcaption>Soft glow and polished skin finish</figcaption></figure>
-      <figure><img src="assets/pearl-bw.jpg" alt="Black and white pearl portrait"><figcaption>Classic profile with luxury simplicity</figcaption></figure>
-      <figure><img src="assets/beauty-pearl-clean.jpg" alt="Julia pearl beauty close-up"><figcaption>Refined clean beauty with sculpted profile</figcaption></figure>
-      <figure><img src="assets/beauty-lips.jpg" alt="Beauty lip closeup"><figcaption>Detail-oriented cosmetic beauty crop</figcaption></figure>
-      <figure><img src="assets/beauty-curly-1.jpg" alt="Julia curly hair beauty portrait"><figcaption>Fuller hair texture with softer makeup read</figcaption></figure>
-      <figure><img src="assets/gold-face.jpg" alt="Gold beauty portrait"><figcaption>Textural concept beauty for more creative briefs</figcaption></figure>
-      <figure><img src="assets/red-gown-headshot.jpg" alt="Red gown headshot"><figcaption>Stronger glamour-adjacent beauty finish</figcaption></figure>
+    <section class="hero" style="margin-top:18px">
+      <div class="mosaic">
+        <figure class="mid"><img src="assets/beauty-hat-bw.jpg" alt="Julia black and white hat portrait"><figcaption>Monochrome beauty with stronger shape and contrast.</figcaption></figure>
+        <figure class="mid"><img src="assets/beauty-curly-1.jpg" alt="Julia curly hair beauty portrait"><figcaption>Texture, softness, and a more natural glamour read.</figcaption></figure>
+      </div>
+      <div class="mosaic">
+        <figure class="mid"><img src="assets/gold-face.jpg" alt="Julia gold face closeup"><figcaption>Creative beauty for concept or editorial-led briefs.</figcaption></figure>
+        <figure class="mid"><img src="assets/beauty-lips.jpg" alt="Julia beauty lips closeup"><figcaption>Detail-oriented cosmetic or beauty crop.</figcaption></figure>
+      </div>
+    </section>
+    <section class="contact">
+      <div>
+        <div class="eyebrow">Contact Julia</div>
+        <h2>Use this page when the face is the product.</h2>
+        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
+      </div>
     </section>
   </main>
 </body>
