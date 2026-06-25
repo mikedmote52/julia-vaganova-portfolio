@@ -6,67 +6,134 @@
   <title>Julia Vaganova | Natural / Casting Basics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#151514;
-      --muted:#666963;
-      --line:rgba(21,21,20,.12);
-      --paper:#f4f6f2;
-      --white:#ffffff;
-      --sage:#dce5d9;
+      --ink:#171715;
+      --muted:#62665f;
+      --line:rgba(23,23,21,.12);
+      --paper:#f4f6f1;
+      --card:#ffffff;
+      --sage:#dfe7dd;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:"Manrope",sans-serif;
       color:var(--ink);
-      background:linear-gradient(180deg,#f6f8f4 0%,#e9eee7 100%);
+      font-family:"IBM Plex Sans",sans-serif;
+      background:linear-gradient(180deg,#f6f8f4 0%,#e7ede6 100%);
     }
     a{color:inherit}
-    .shell{width:min(1120px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
-    .top{display:flex;justify-content:space-between;gap:12px;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;color:var(--muted);margin-bottom:18px}
-    .hero{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;align-items:start}
-    .panel,.sheet,.contact{border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.84);box-shadow:0 18px 56px rgba(41,49,37,.06)}
-    .panel{padding:30px}
-    .sheet{padding:18px}
-    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--muted);margin-bottom:10px}
-    h1,h2{margin:0;font-family:"Libre Baskerville",serif}
-    h1{font-size:clamp(2.8rem,6vw,4.8rem);line-height:1.02;margin-bottom:16px}
-    h2{font-size:clamp(1.6rem,3vw,2.4rem)}
-    p{margin:0;color:var(--muted);line-height:1.75}
+    .shell{width:min(1180px,calc(100vw - 28px));margin:0 auto;padding:24px 0 60px}
+    .header{
+      display:grid;
+      grid-template-columns:.76fr 1.24fr;
+      gap:18px;
+      align-items:start;
+    }
+    .comp,.contact-panel,.sheet,.spec-bar{
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:rgba(255,255,255,.82);
+      box-shadow:0 18px 54px rgba(38,49,36,.06);
+      overflow:hidden;
+    }
+    .comp{
+      padding:20px;
+      background:linear-gradient(180deg, rgba(223,231,221,.56), rgba(255,255,255,.98));
+    }
+    .comp figure{margin:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+    .comp img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+    .comp figcaption{padding:12px 14px 14px;color:var(--muted);font-size:.88rem}
+    .contact-panel{padding:28px}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-size:.72rem;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    h1,h2{margin:0;font-family:"IBM Plex Serif",serif;line-height:1.02}
+    h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:14px;max-width:10ch}
+    h2{font-size:clamp(1.8rem,3vw,2.4rem)}
+    p{margin:0;color:var(--muted);line-height:1.8}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    .button{
+      display:inline-flex;
+      min-height:44px;
+      align-items:center;
+      justify-content:center;
+      padding:0 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:.92rem;
+      font-weight:700;
+    }
     .button.primary{background:var(--ink);color:#fff}
     .button.secondary{border:1px solid var(--line);background:#fff}
-    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-    .mini{padding:14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg, rgba(220,229,217,.35), rgba(255,255,255,.92))}
-    .mini strong{display:block;margin-bottom:6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    figure{margin:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--white)}
-    figure img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
-    figcaption{padding:12px 13px 15px;font-size:.9rem;color:var(--muted)}
-    .contact{margin-top:18px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .spec-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:20px;
+    }
+    .spec{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .spec strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+    .sheet{
+      margin-top:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .sheet figure{margin:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
+    .sheet img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+    .sheet figcaption{padding:12px 13px 15px;color:var(--muted);font-size:.88rem}
+    .spec-bar{
+      margin-top:18px;
+      padding:20px 22px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(255,255,255,.94), rgba(223,231,221,.62));
+    }
     .small{font-size:.92rem;color:var(--muted);margin-top:8px}
-    @media (max-width:920px){
-      .hero,.gallery,.contact,.card-grid{grid-template-columns:1fr}
+    @media (max-width:960px){
+      .header,.sheet,.spec-bar,.spec-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="top"><div>Julia Vaganova</div><div>Natural / Casting Basics</div></div>
-
-    <section class="hero">
-      <div class="panel">
-        <div class="eyebrow">Casting Edit</div>
-        <h1>Clean, simple, and easy to read.</h1>
-        <p>This page is built like a strong first impression. The styling stays minimal, the imagery stays approachable, and the focus stays on how Julia actually reads in a clean casting or early-client-review context.</p>
-        <div class="card-grid">
-          <div class="mini"><strong>Best For</strong>Casting, first looks, natural presentation</div>
-          <div class="mini"><strong>Read</strong>Clean, approachable, low-styling</div>
-          <div class="mini"><strong>Use Case</strong>Submissions, decks, direct booking intros</div>
-          <div class="mini"><strong>Contact</strong><a href="mailto:vaganovajulia88@gmail.com">Email Julia</a></div>
+    <section class="header">
+      <div class="comp">
+        <div class="eyebrow">Casting Card</div>
+        <figure>
+          <img src="assets/casting-clean-1.jpg" alt="Julia clean casting headshot">
+          <figcaption>A clean first-look image designed for fast client reading.</figcaption>
+        </figure>
+      </div>
+      <div class="contact-panel">
+        <div class="eyebrow">Natural / Casting Basics</div>
+        <h1>Low styling, clear read, no wasted signal.</h1>
+        <p>This page is built like a casting tool. It favors clean light, straightforward presentation, and easy comparison over mood or concept. The goal is to help a client understand Julia quickly and accurately.</p>
+        <div class="spec-grid">
+          <div class="spec"><strong>Best For</strong>casting, submissions, first looks</div>
+          <div class="spec"><strong>Read</strong>approachable, natural, clean</div>
+          <div class="spec"><strong>Strength</strong>simple client-facing presentation</div>
+          <div class="spec"><strong>Contact</strong><a href="mailto:vaganovajulia88@gmail.com">email Julia</a></div>
         </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
@@ -74,25 +141,24 @@
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <div class="sheet">
-        <div class="gallery">
-          <figure><img src="assets/casting-clean-1.jpg" alt="Julia clean casting headshot"><figcaption>No-makeup or minimal-makeup casting read.</figcaption></figure>
-          <figure><img src="assets/clean-black-tank.jpg" alt="Julia in black tank"><figcaption>Straightforward face and body proportion read.</figcaption></figure>
-          <figure><img src="assets/headshot-warm.jpg" alt="Julia warm headshot"><figcaption>Polished but still approachable headshot.</figcaption></figure>
-          <figure><img src="assets/lifestyle-lounge-1.jpg" alt="Julia in loungewear set with another model"><figcaption>Easygoing commercial softness.</figcaption></figure>
-          <figure><img src="assets/lifestyle-lounge-2.jpg" alt="Julia in group loungewear image"><figcaption>Natural ensemble energy without heavy styling.</figcaption></figure>
-          <figure><img src="assets/commercial-set-2.jpg" alt="Julia in commercial lounge set"><figcaption>Wellness, lounge, or lifestyle-friendly presentation.</figcaption></figure>
-        </div>
-      </div>
     </section>
 
-    <section class="contact">
+    <section class="sheet">
+      <figure><img src="assets/clean-black-tank.jpg" alt="Julia clean black tank portrait"><figcaption>Simple face and body read with minimal styling.</figcaption></figure>
+      <figure><img src="assets/headshot-warm.jpg" alt="Julia polished headshot"><figcaption>Friendly polished headshot for direct booking or intro decks.</figcaption></figure>
+      <figure><img src="assets/beauty-natural-1.jpg" alt="Julia natural portrait"><figcaption>Soft natural portrait with light commercial usability.</figcaption></figure>
+      <figure><img src="assets/lifestyle-lounge-1.jpg" alt="Julia with other model in loungewear"><figcaption>Approachable group frame with easy commercial softness.</figcaption></figure>
+      <figure><img src="assets/commercial-set-2.jpg" alt="Julia in lifestyle loungewear image"><figcaption>Wellness or lounge-friendly image without heavy styling.</figcaption></figure>
+      <figure><img src="assets/commercial-set-3.jpg" alt="Julia in lifestyle group"><figcaption>Natural ensemble energy that still feels client-safe.</figcaption></figure>
+    </section>
+
+    <section class="spec-bar">
       <div>
         <div class="eyebrow">Contact Julia</div>
         <h2>Use this page when clarity matters more than styling.</h2>
         <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
       </div>
-      <div class="actions">
+      <div class="actions" style="margin-top:0">
         <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
       </div>
     </section>

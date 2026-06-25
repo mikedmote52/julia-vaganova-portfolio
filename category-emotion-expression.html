@@ -6,65 +6,107 @@
   <title>Julia Vaganova | Emotion & Expression</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Infant:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#f3ece5;
-      --muted:#d2c4ba;
-      --line:rgba(243,236,229,.12);
-      --panel:rgba(24,20,22,.8);
-      --wine:rgba(120,66,72,.26);
-      --ash:rgba(71,76,86,.2);
+      --ink:#f3ece4;
+      --muted:#d0c3b8;
+      --line:rgba(243,236,228,.12);
+      --shadow:rgba(0,0,0,.3);
+      --panel:rgba(25,20,23,.74);
+      --rose:rgba(112,68,73,.24);
+      --ash:rgba(72,76,88,.18);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:"Manrope",sans-serif;
       color:var(--ink);
+      font-family:"Manrope",sans-serif;
       background:
-        radial-gradient(circle at 15% 18%, var(--wine), transparent 24rem),
-        radial-gradient(circle at 82% 70%, var(--ash), transparent 22rem),
-        linear-gradient(180deg,#181315 0%,#2c2326 100%);
+        radial-gradient(circle at 16% 16%, var(--rose), transparent 24rem),
+        radial-gradient(circle at 82% 70%, var(--ash), transparent 24rem),
+        linear-gradient(180deg,#181315 0%,#2a2225 100%);
     }
     a{color:inherit}
-    .shell{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
-    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
-    .hero,.row,.contact{display:grid;gap:18px}
-    .hero{grid-template-columns:1.05fr .95fr}
-    .row{grid-template-columns:1fr 1fr}
-    .copy,.frame,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:var(--panel);box-shadow:0 24px 90px rgba(0,0,0,.24);backdrop-filter:blur(10px)}
-    .copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
-    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:#e0b6ae;margin-bottom:10px}
-    h1,h2{margin:0;font-family:"Fraunces",serif;line-height:.95}
-    h1{font-size:clamp(3rem,7vw,5.2rem);margin-bottom:16px;max-width:8ch}
+    .shell{width:min(1200px,calc(100vw - 28px));margin:0 auto;padding:22px 0 60px}
+    .cinema,.beats,.contact-band{
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow:0 24px 90px var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+    .cinema{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:0;
+    }
+    .cinema-image img,.beat img{width:100%;height:100%;display:block;object-fit:cover}
+    .cinema-image img{min-height:760px}
+    .cinema-copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.72rem;
+      color:#ddb6ad;
+      margin-bottom:10px;
+    }
+    h1,h2{margin:0;font-family:"Cormorant Infant",serif;line-height:.94}
+    h1{font-size:clamp(3.2rem,7vw,5.8rem);margin-bottom:14px;max-width:8ch}
     h2{font-size:clamp(2rem,4vw,3rem)}
     p{margin:0;color:var(--muted);line-height:1.84}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
-    .button.primary{background:#f3ece5;color:#181315}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .button{
+      display:inline-flex;
+      min-height:46px;
+      align-items:center;
+      justify-content:center;
+      padding:0 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:.92rem;
+      font-weight:700;
+    }
+    .button.primary{background:#f3ece4;color:#181315}
     .button.secondary{border:1px solid var(--line);background:rgba(255,255,255,.04)}
-    .frame img{width:100%;display:block;object-fit:cover}
-    .frame.hero-image img{min-height:660px}
-    .frame.small img{min-height:320px}
-    .caption{padding:14px 16px 18px;color:var(--muted)}
-    .caption strong{display:block;margin-bottom:4px;color:var(--ink)}
-    .contact{grid-template-columns:1fr auto;padding:24px 26px;align-items:center}
+    .beats{
+      margin-top:18px;
+      padding:16px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .beat{margin:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.03)}
+    .beat img{aspect-ratio:4/5}
+    .beat figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
+    .contact-band{
+      margin-top:18px;
+      padding:22px 24px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(112,68,73,.12));
+    }
     .small{font-size:.92rem;color:var(--muted);margin-top:8px}
-    @media (max-width:940px){
-      .hero,.row,.contact{grid-template-columns:1fr}
-      .frame.hero-image img,.frame.small img{min-height:auto}
+    @media (max-width:980px){
+      .cinema,.beats,.contact-band{grid-template-columns:1fr}
+      .cinema-image img{min-height:460px}
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="top"><div>Julia Vaganova</div><div>Emotion & Expression</div></div>
-    <section class="hero">
-      <div class="copy">
+    <section class="cinema">
+      <div class="cinema-image">
+        <img src="assets/wet-chain.jpg" alt="Julia emotional cinematic portrait">
+      </div>
+      <div class="cinema-copy">
         <div>
-          <div class="eyebrow">Emotion Portfolio</div>
-          <h1>Mood, intimacy, and a stronger emotional read.</h1>
-          <p>This page is built around the images where expression carries the frame. Instead of leading with styling or glamour, it leads with feeling: softness, vulnerability, tension, and the ability to make a still image feel lived-in.</p>
+          <div class="eyebrow">Emotion & Expression</div>
+          <h1>Feeling has to arrive before the words do.</h1>
+          <p>This page is paced like a mood sequence, not a standard booking gallery. It is built around the images where Julia communicates atmosphere, softness, tension, and emotional presence before styling takes over.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
@@ -72,38 +114,21 @@
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
       </div>
-      <div class="frame hero-image">
-        <img src="assets/wet-chain.jpg" alt="Julia emotional wet chain portrait">
-        <div class="caption"><strong>Cinematic tension</strong>Emotion carried through texture, gaze, and atmosphere.</div>
-      </div>
     </section>
-    <section class="row" style="margin-top:18px">
-      <div class="frame small">
-        <img src="assets/beach-bw.jpg" alt="Julia beach black and white portrait">
-        <div class="caption"><strong>Romantic openness</strong>A softer emotional tone with space and breath in the frame.</div>
-      </div>
-      <div class="frame small">
-        <img src="assets/outdoor-black-glove.jpg" alt="Julia outdoor portrait in black glove">
-        <div class="caption"><strong>Quiet intensity</strong>Direct eye contact with subtle emotional control.</div>
-      </div>
+
+    <section class="beats">
+      <figure class="beat"><img src="assets/beach-bw.jpg" alt="Julia beach black and white portrait"><figcaption>Romantic openness with room for breath and softness.</figcaption></figure>
+      <figure class="beat"><img src="assets/outdoor-black-glove.jpg" alt="Julia outdoor glove portrait"><figcaption>Quiet tension through direct eye contact and restraint.</figcaption></figure>
+      <figure class="beat"><img src="assets/colonnade-coat.jpg" alt="Julia in coat by columns"><figcaption>Location and body language working together as narrative.</figcaption></figure>
     </section>
-    <section class="row" style="margin-top:18px">
-      <div class="frame small">
-        <img src="assets/colonnade-coat.jpg" alt="Julia in coat at columns">
-        <div class="caption"><strong>Narrative mood</strong>Location and body language working together to create story.</div>
-      </div>
-      <div class="frame small">
-        <img src="assets/dog-bw-profile.jpg" alt="Julia and dog black and white portrait">
-        <div class="caption"><strong>Shared presence</strong>Emotion expressed through connection rather than styling alone.</div>
-      </div>
-    </section>
-    <section class="contact" style="margin-top:18px">
+
+    <section class="contact-band">
       <div>
         <div class="eyebrow">Contact Julia</div>
         <h2>Use this page when the client wants feeling, not just polish.</h2>
         <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
       </div>
-      <div class="actions">
+      <div class="actions" style="margin-top:0">
         <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
       </div>
     </section>

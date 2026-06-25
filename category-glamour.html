@@ -28,7 +28,6 @@
     }
     a{color:inherit}
     .shell{width:min(1220px,calc(100vw - 28px));margin:0 auto;padding:24px 0 64px}
-    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
     .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}
     .poster,.copy,.strip,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:var(--panel);box-shadow:0 28px 90px rgba(0,0,0,.36)}
     .poster img{width:100%;height:100%;display:block;object-fit:cover;min-height:700px}
@@ -53,18 +52,14 @@
     .tall img{min-height:520px}
     .short img{min-height:250px}
     figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
-    .contact{margin-top:18px;padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
-    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
     @media (max-width:940px){
-      .hero,.gallery,.contact,.stats{grid-template-columns:1fr}
+      .hero,.gallery,.stats{grid-template-columns:1fr}
       .poster img,.tall img,.short img{min-height:auto}
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="top"><div>Julia Vaganova</div><div>Glamour</div></div>
-
     <section class="hero">
       <div class="poster">
         <img src="assets/red-gown-2.jpg" alt="Julia in dramatic red gown">
@@ -100,16 +95,6 @@
       </div>
     </section>
 
-    <section class="contact">
-      <div>
-        <div class="eyebrow">Contact Julia</div>
-        <h2>Use this page when the brief needs more presence and polish.</h2>
-        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
-      </div>
-      <div class="actions">
-        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
-      </div>
-    </section>
   </main>
 </body>
 </html>

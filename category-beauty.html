@@ -6,97 +6,197 @@
   <title>Julia Vaganova | Beauty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#171210;
-      --muted:#6a5f57;
-      --line:rgba(23,18,16,.1);
-      --paper:#fcf8f3;
-      --rose:#f2ddd7;
-      --glass:rgba(255,255,255,.8);
+      --ink:#1a1512;
+      --muted:#6b625c;
+      --line:rgba(26,21,18,.1);
+      --paper:#fbf6f1;
+      --powder:#f1dfd8;
+      --white:#fffdfb;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:"Manrope",sans-serif;
       color:var(--ink);
+      font-family:"Manrope",sans-serif;
       background:
-        radial-gradient(circle at 85% 10%, rgba(242,221,215,.8), transparent 24rem),
-        radial-gradient(circle at 15% 75%, rgba(255,255,255,.8), transparent 20rem),
-        linear-gradient(180deg,#fcf7f1 0%,#efe4da 100%);
+        radial-gradient(circle at 82% 12%, rgba(241,223,216,.84), transparent 24rem),
+        radial-gradient(circle at 18% 72%, rgba(255,255,255,.88), transparent 20rem),
+        linear-gradient(180deg,#fcf8f3 0%,#efe4db 100%);
     }
     a{color:inherit}
-    .shell{width:min(1160px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
-    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
-    .hero{display:grid;grid-template-columns:.84fr 1.16fr;gap:18px}
-    .lead,.mosaic,.contact{border:1px solid var(--line);border-radius:30px;background:var(--glass);box-shadow:0 20px 60px rgba(55,36,24,.08);backdrop-filter:blur(12px)}
-    .lead{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
-    .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--muted);margin-bottom:10px}
-    h1,h2{margin:0;font-family:"Prata",serif;line-height:1.02}
-    h1{font-size:clamp(3rem,6vw,5rem);margin-bottom:16px;max-width:8ch}
+    .shell{width:min(1220px,calc(100vw - 28px));margin:0 auto;padding:20px 0 60px}
+    .hero{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .portrait-stage,.rail,.sheet,.contact-ribbon{
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:rgba(255,255,255,.76);
+      box-shadow:0 22px 70px rgba(63,41,28,.08);
+      overflow:hidden;
+      backdrop-filter:blur(12px);
+    }
+    .portrait-stage{
+      position:relative;
+      min-height:760px;
+      background:#fff;
+    }
+    .portrait-stage img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .title-card{
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      width:min(430px,calc(100% - 40px));
+      padding:20px 22px;
+      background:rgba(255,253,251,.9);
+      border:1px solid rgba(26,21,18,.08);
+      border-radius:24px;
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.72rem;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    h1,h2{margin:0;font-family:"Playfair Display",serif;line-height:.96}
+    h1{font-size:clamp(3rem,7vw,5.8rem);margin-bottom:12px;max-width:8ch}
     h2{font-size:clamp(2rem,4vw,3rem)}
-    p{margin:0;color:var(--muted);line-height:1.82}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;text-decoration:none;font-size:.92rem;font-weight:700}
+    p{margin:0;color:var(--muted);line-height:1.84}
+    .rail{
+      display:grid;
+      grid-template-rows:auto auto 1fr auto;
+      gap:0;
+    }
+    .rail-block{padding:24px 24px 0}
+    .rail-copy{padding:0 24px 24px}
+    .stat-list{
+      display:grid;
+      gap:10px;
+      margin-top:18px;
+    }
+    .stat{
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(241,223,216,.34), rgba(255,255,255,.96));
+    }
+    .stat strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--ink);
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:0 24px 24px;
+    }
+    .button{
+      display:inline-flex;
+      min-height:46px;
+      align-items:center;
+      justify-content:center;
+      padding:0 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:.92rem;
+      font-weight:700;
+    }
     .button.primary{background:var(--ink);color:#fff}
     .button.secondary{border:1px solid var(--line);background:#fff}
-    .mosaic{padding:16px;display:grid;grid-template-columns:1.05fr .95fr;gap:14px}
-    .column{display:grid;gap:14px}
-    figure{margin:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff}
-    figure img{width:100%;display:block;object-fit:cover}
-    .tall img{min-height:640px}
-    .mid img{min-height:310px}
+    .sheet{
+      margin-top:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.76), rgba(251,246,241,.95));
+    }
+    figure{margin:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--white)}
+    figure img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
     figcaption{padding:12px 14px 15px;color:var(--muted);font-size:.9rem}
-    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .contact-ribbon{
+      margin-top:18px;
+      padding:22px 26px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(241,223,216,.52));
+    }
     .small{font-size:.92rem;color:var(--muted);margin-top:8px}
-    @media (max-width:940px){
-      .hero,.mosaic,.contact{grid-template-columns:1fr}
-      .tall img,.mid img{min-height:auto}
+    @media (max-width:980px){
+      .hero,.sheet,.contact-ribbon{grid-template-columns:1fr}
+      .portrait-stage{min-height:460px}
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="top"><div>Julia Vaganova</div><div>Beauty</div></div>
     <section class="hero">
-      <div class="lead">
-        <div>
+      <div class="portrait-stage">
+        <img src="assets/headshot-warm.jpg" alt="Julia beauty headshot">
+        <div class="title-card">
           <div class="eyebrow">Beauty Portfolio</div>
-          <h1>Face-first, clean, and camera-ready.</h1>
-          <p>This page is designed around Julia's facial structure, skin, expression, and beauty range. The layout stays clean so the eye lands where a beauty client wants it to: on close detail, polish, and the way she reads without unnecessary noise.</p>
+          <h1>Clean beauty, strong structure, real polish.</h1>
+          <p>This page behaves like a beauty deck, not a generic portfolio page. It is designed to keep the eye on Julia's face, skin, and expression first.</p>
         </div>
+      </div>
+      <aside class="rail">
+        <div class="rail-block">
+          <div class="eyebrow">Use This For</div>
+          <h2>Face-first briefs.</h2>
+        </div>
+        <div class="rail-copy">
+          <p>Beauty, skincare, portrait-led campaigns, cosmetic content, and any booking where the client needs a fast read on how Julia carries close detail.</p>
+          <div class="stat-list">
+            <div class="stat"><strong>Read</strong>polished, clean, composed</div>
+            <div class="stat"><strong>Strength</strong>skin, profile, eye contact</div>
+            <div class="stat"><strong>Best Use</strong>beauty decks and campaign selects</div>
+          </div>
+        </div>
+        <div></div>
         <div class="actions">
           <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
           <a class="button secondary" href="https://www.instagram.com/julia_mod8/">View Instagram</a>
           <a class="button secondary" href="index.html">Back to Portal</a>
         </div>
-      </div>
-      <div class="mosaic">
-        <figure class="tall"><img src="assets/headshot-warm.jpg" alt="Julia beauty headshot"><figcaption>Clean market-facing beauty portrait.</figcaption></figure>
-        <div class="column">
-          <figure class="mid"><img src="assets/beauty-pearl-clean.jpg" alt="Julia pearl beauty profile"><figcaption>Refined profile with polished skin and softness.</figcaption></figure>
-          <figure class="mid"><img src="assets/white-halter-beauty.jpg" alt="Julia white halter beauty image"><figcaption>Soft glow and elegant complexion detail.</figcaption></figure>
-        </div>
-      </div>
+      </aside>
     </section>
-    <section class="hero" style="margin-top:18px">
-      <div class="mosaic">
-        <figure class="mid"><img src="assets/beauty-hat-bw.jpg" alt="Julia black and white hat portrait"><figcaption>Monochrome beauty with stronger shape and contrast.</figcaption></figure>
-        <figure class="mid"><img src="assets/beauty-curly-1.jpg" alt="Julia curly hair beauty portrait"><figcaption>Texture, softness, and a more natural glamour read.</figcaption></figure>
-      </div>
-      <div class="mosaic">
-        <figure class="mid"><img src="assets/gold-face.jpg" alt="Julia gold face closeup"><figcaption>Creative beauty for concept or editorial-led briefs.</figcaption></figure>
-        <figure class="mid"><img src="assets/beauty-lips.jpg" alt="Julia beauty lips closeup"><figcaption>Detail-oriented cosmetic or beauty crop.</figcaption></figure>
-      </div>
+
+    <section class="sheet">
+      <figure><img src="assets/beauty-pearl-clean.jpg" alt="Julia pearl beauty profile"><figcaption>Profile-driven beauty with a refined, luxury feel.</figcaption></figure>
+      <figure><img src="assets/white-halter-beauty.jpg" alt="Julia white halter beauty image"><figcaption>Soft finish and skin-first beauty lighting.</figcaption></figure>
+      <figure><img src="assets/beauty-hat-bw.jpg" alt="Julia black and white hat portrait"><figcaption>Stronger monochrome shape with clean facial focus.</figcaption></figure>
+      <figure><img src="assets/beauty-curly-1.jpg" alt="Julia curly hair beauty portrait"><figcaption>Natural texture with a more relaxed glamour read.</figcaption></figure>
+      <figure><img src="assets/gold-face.jpg" alt="Julia gold face closeup"><figcaption>Creative beauty for more stylized beauty concepts.</figcaption></figure>
+      <figure><img src="assets/beauty-lips.jpg" alt="Julia lips beauty crop"><figcaption>Detail crop suited to cosmetic or lips-focused content.</figcaption></figure>
+      <figure><img src="assets/beauty-natural-1.jpg" alt="Julia natural beauty portrait"><figcaption>Minimal-distraction portrait with direct market usability.</figcaption></figure>
+      <figure><img src="assets/red-gown-headshot.jpg" alt="Julia glamour beauty headshot"><figcaption>Beauty with a slightly more dramatic finish.</figcaption></figure>
     </section>
-    <section class="contact">
+
+    <section class="contact-ribbon">
       <div>
         <div class="eyebrow">Contact Julia</div>
         <h2>Use this page when the face is the product.</h2>
         <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
       </div>
-      <div class="actions">
+      <div class="actions" style="padding:0">
         <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
       </div>
     </section>

@@ -28,7 +28,6 @@
     }
     a{color:inherit}
     .shell{width:min(1140px,calc(100vw - 32px));margin:0 auto;padding:28px 0 64px}
-    .top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;margin-bottom:18px}
     .story{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px}
     .portrait,.copy,.pair,.contact{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:rgba(255,253,249,.82);box-shadow:0 18px 60px rgba(37,41,33,.08)}
     .portrait img,.pair img{width:100%;height:100%;display:block;object-fit:cover}
@@ -50,18 +49,14 @@
     .pair{display:grid;grid-template-rows:auto auto}
     .caption{padding:14px 16px 18px}
     .caption strong{display:block;margin-bottom:4px}
-    .contact{margin-top:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:linear-gradient(135deg, rgba(255,255,255,.88), rgba(221,224,214,.58))}
-    .small{font-size:.92rem;color:var(--muted);margin-top:8px}
     @media (max-width:920px){
-      .story,.gallery,.contact,.notes{grid-template-columns:1fr}
+      .story,.gallery,.notes{grid-template-columns:1fr}
       .portrait img{min-height:auto}
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="top"><div>Julia Vaganova</div><div>Animal Work</div></div>
-
     <section class="story">
       <div class="portrait">
         <img src="assets/dog-seated-black.jpg" alt="Julia with German Shepherd in black outfit">
@@ -103,16 +98,6 @@
       </div>
     </section>
 
-    <section class="contact">
-      <div>
-        <div class="eyebrow">Contact Julia</div>
-        <h2>Use this page when the client needs comfort, emotion, and control with animals.</h2>
-        <div class="small">Email: <a href="mailto:vaganovajulia88@gmail.com">vaganovajulia88@gmail.com</a> • Instagram: <a href="https://www.instagram.com/julia_mod8/">@julia_mod8</a></div>
-      </div>
-      <div class="actions">
-        <a class="button primary" href="mailto:vaganovajulia88@gmail.com">Email Julia</a>
-      </div>
-    </section>
   </main>
 </body>
 </html>
