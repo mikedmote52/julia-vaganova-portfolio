@@ -11,7 +11,7 @@
     :root { --ink:#f2ece5; --muted:#d1c4ba; --line:rgba(242,236,229,.12); --wine:rgba(96,52,56,.22); --ash:rgba(72,76,84,.18); --panel:rgba(24,20,21,.72); }
     *{box-sizing:border-box} body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at 18% 18%, var(--wine), transparent 24rem),radial-gradient(circle at 82% 70%, var(--ash), transparent 24rem),linear-gradient(180deg,#181315 0%,#2a2225 100%)}
     a{color:inherit}.shell{width:min(1120px,calc(100vw - 32px));margin:0 auto;padding:28px 0 56px}.top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:18px}
-    .hero,.grid{display:grid;gap:18px}.hero{grid-template-columns:1fr 1fr;margin-bottom:18px}.grid{grid-template-columns:1fr 1fr}
+    .hero,.grid{display:grid;gap:18px}.hero{grid-template-columns:1fr 1fr;margin-bottom:18px}.grid{grid-template-columns:repeat(3,1fr)}
     .panel,figure{border:1px solid var(--line);border-radius:30px;background:var(--panel);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.25);backdrop-filter:blur(10px)} .panel{padding:30px} figure{margin:0}
     .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;color:#e3b9b0;margin-bottom:10px} h1{font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,7vw,5.8rem);line-height:.92;margin:0 0 12px}
     p{color:var(--muted);line-height:1.8;margin:0}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.82rem}
@@ -22,12 +22,14 @@
 </head>
 <body><main class="shell"><div class="top"><div>Julia Vaganova</div><div>Emotion & Expression</div></div>
 <section class="hero">
-  <div class="panel"><div class="eyebrow">Portfolio Category</div><h1>Emotion & expression.</h1><p>This page focuses on mood, softness, vulnerability, tension, and emotional presence. These images help show that Julia can do more than pose cleanly; she can communicate feeling on camera.</p><div class="meta"><div class="pill">emotion</div><div class="pill">expression</div><div class="pill">mood</div><div class="pill">presence</div></div><div class="actions"><a class="button primary" href="https://www.instagram.com/julia_mod8/">Book via Instagram</a><a class="button secondary" href="index.html">Back to Portal</a></div></div>
-  <figure><img src="assets/wet-chain.jpg" alt="Emotional portrait"><figcaption>Vulnerability / tension / cinematic portraiture</figcaption></figure>
+  <div class="panel"><div class="eyebrow">Portfolio Category</div><h1>Emotion & expression.</h1><p>This page focuses on mood, softness, vulnerability, tension, and emotional presence. These images help show that Julia can do more than pose cleanly; she can communicate feeling, intimacy, and atmosphere on camera.</p><div class="meta"><div class="pill">emotion</div><div class="pill">expression</div><div class="pill">mood</div><div class="pill">presence</div></div><div class="actions"><a class="button primary" href="https://www.instagram.com/julia_mod8/">Book via Instagram</a><a class="button secondary" href="index.html">Back to Portal</a></div></div>
+  <figure><img src="assets/wet-chain.jpg" alt="Emotional portrait"><figcaption>Vulnerability, tension, and cinematic portraiture</figcaption></figure>
 </section>
 <section class="grid">
   <figure><img src="assets/beach-bw.jpg" alt="Beach emotional portrait"><figcaption>Open, romantic, softer emotional tone</figcaption></figure>
-  <figure><img src="assets/outdoor-black-glove.jpg" alt="Outdoor portrait with glove"><figcaption>Subtle expression / direct eye contact</figcaption></figure>
-  <figure><img src="assets/gold-face.jpg" alt="Concept beauty portrait"><figcaption>Emotion through stylized beauty work</figcaption></figure>
+  <figure><img src="assets/outdoor-black-glove.jpg" alt="Outdoor portrait with glove"><figcaption>Subtle expression with direct eye contact</figcaption></figure>
+  <figure><img src="assets/colonnade-coat.jpg" alt="Julia in coat at columns"><figcaption>Quiet narrative mood with location presence</figcaption></figure>
+  <figure><img src="assets/gold-face.jpg" alt="Concept beauty portrait"><figcaption>Emotion carried through stylized beauty work</figcaption></figure>
+  <figure><img src="assets/beauty-curly-1.jpg" alt="Julia soft curly expression portrait"><figcaption>Softer intimacy and face-led expression</figcaption></figure>
   <figure><img src="assets/dog-bw-profile.jpg" alt="Dog and Julia black and white"><figcaption>Presence and intimacy in a shared frame</figcaption></figure>
 </section></main></body></html>
