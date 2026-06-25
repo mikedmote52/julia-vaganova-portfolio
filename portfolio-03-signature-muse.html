@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julia Vaganova | Signature Muse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #d8cfbf;
+      --paper: #ebe4d8;
+      --ink: #17130f;
+      --muted: #5f574f;
+      --line: rgba(23, 19, 15, 0.1);
+      --olive: #70725d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(23, 19, 15, 0.04), transparent 16rem),
+        linear-gradient(180deg, #ddd2c3 0%, #ece4da 100%);
+      color: var(--ink);
+      font-family: "Spectral", serif;
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(1200px, calc(100vw - 30px));
+      margin: 0 auto;
+      padding: 18px 0 64px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .image-wrap,
+    .copy-wrap,
+    .band {
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.38);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 64px rgba(54, 44, 33, 0.1);
+    }
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      min-height: 700px;
+    }
+    .copy-wrap {
+      padding: 34px;
+      display: grid;
+      align-content: center;
+      gap: 18px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-family: "Syne", sans-serif;
+      font-size: 0.75rem;
+      color: var(--olive);
+    }
+    h1, h2 {
+      font-family: "Syne", sans-serif;
+      margin: 0;
+    }
+    h1 {
+      font-size: clamp(3.4rem, 7vw, 6rem);
+      line-height: 0.92;
+      max-width: 7ch;
+    }
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.95;
+    }
+    .copy-wrap p,
+    .band p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.02rem;
+      margin: 0;
+    }
+    .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-family: "Syne", sans-serif;
+      font-size: 0.82rem;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Syne", sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    .button.primary { background: var(--ink); color: white; }
+    .button.secondary { border: 1px solid var(--line); background: rgba(255,255,255,0.5); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    figure {
+      margin: 0;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.48);
+    }
+    figure img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 100%;
+    }
+    figcaption {
+      padding: 12px 14px 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-4 { grid-column: span 4; }
+    .band {
+      margin-top: 18px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+    @media (max-width: 920px) {
+      .hero, .band { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .span-5, .span-7, .span-4 { grid-column: auto; }
+      .image-wrap img { min-height: 480px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="image-wrap">
+        <img src="assets/dog-seated-black.jpg" alt="Julia in black beside a German Shepherd">
+      </div>
+      <div class="copy-wrap">
+        <div class="eyebrow">Julia Vaganova / Signature Muse</div>
+        <h1>Less generic. More unforgettable.</h1>
+        <p>
+          This concept treats Julia less like a standard image grid and more like a campaign personality. It uses the strongest narrative and character-based shots to make her feel distinctive, memorable, and harder to confuse with everyone else in the market.
+        </p>
+        <div class="chips">
+          <div class="chip">Campaign</div>
+          <div class="chip">Character</div>
+          <div class="chip">Cinematic</div>
+          <div class="chip">Beauty</div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="https://www.instagram.com/julia_mod8/">Open @julia_mod8</a>
+          <a class="button secondary" href="index.html">Back to Concepts</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <figure class="span-5">
+        <img src="assets/dog-bw-profile.jpg" alt="Julia and dog in black and white">
+        <figcaption>Signature frame / strong narrative / memorable visual identity</figcaption>
+      </figure>
+      <figure class="span-7">
+        <img src="assets/colonnade-coat.jpg" alt="Julia walking through columns">
+        <figcaption>Cinematic movement / elevated location presence</figcaption>
+      </figure>
+      <figure class="span-4">
+        <img src="assets/headshot-warm.jpg" alt="Warm portrait headshot">
+        <figcaption>Beauty anchor</figcaption>
+      </figure>
+      <figure class="span-4">
+        <img src="assets/studio-fringe.jpg" alt="Studio pose with fringe jacket">
+        <figcaption>Fashion energy / rocker texture</figcaption>
+      </figure>
+      <figure class="span-4">
+        <img src="assets/beach-bw.jpg" alt="Beach black and white portrait">
+        <figcaption>Romance / atmosphere / mood</figcaption>
+      </figure>
+    </section>
+
+    <section class="band">
+      <div>
+        <div class="eyebrow">Why It Works</div>
+        <h2>It makes the brand feel owned.</h2>
+      </div>
+      <p>
+        This is the strongest option if Julia wants to feel less like “a model with a lot of nice images” and more like someone with a point of view. It is probably the most memorable of the three, but it is also the most specific.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://www.instagram.com/vaganova_juliaa/">Personal Page</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

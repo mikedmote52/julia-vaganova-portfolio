@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julia Vaganova | Quiet Luxury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2ede7;
+      --paper: #faf7f3;
+      --ink: #171310;
+      --muted: #6d645d;
+      --line: rgba(23, 19, 16, 0.12);
+      --accent: #9a816a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(154, 129, 106, 0.22), transparent 26rem),
+        linear-gradient(180deg, #f6f1eb 0%, #efe7de 100%);
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(1160px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+    .mast {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+      padding: 26px 0 36px;
+    }
+    .hero-copy {
+      padding: 40px 0;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: 0.88;
+      margin: 14px 0 20px;
+      font-weight: 600;
+      max-width: 8ch;
+    }
+    .lede {
+      max-width: 520px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .button.primary { background: var(--ink); color: #fff; }
+    .button.secondary { border: 1px solid var(--line); background: transparent; }
+    .hero-card {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(48, 33, 20, 0.12);
+    }
+    .hero-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+    }
+    .hero-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 14px 16px;
+      width: min(280px, calc(100% - 36px));
+      background: rgba(250, 247, 243, 0.88);
+      border: 1px solid rgba(23, 19, 16, 0.08);
+      border-radius: 22px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-note strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .section {
+      padding: 22px 0 80px;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 20px;
+      margin-bottom: 22px;
+      align-items: end;
+    }
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      line-height: 0.95;
+      margin: 0;
+    }
+    .section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .masonry {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    figure {
+      margin: 0;
+      background: rgba(255,255,255,0.64);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    figure img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    figcaption {
+      padding: 12px 14px 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .contact {
+      padding: 26px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(243,234,225,0.92));
+      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+    .tiny {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px) {
+      .mast, .section-head, .masonry, .contact {
+        grid-template-columns: 1fr;
+      }
+      .hero-copy { padding-top: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="mast">
+      <div class="hero-copy">
+        <div class="eyebrow">Julia Vaganova / Los Angeles</div>
+        <h1>Quiet luxury, built to book.</h1>
+        <div class="lede">
+          A cleaner, more elevated portfolio direction for beauty, bridal, and refined direct bookings. The goal of this cut is clarity: polished presence, strong face, and elegant restraint.
+        </div>
+        <div class="meta">
+          <div class="pill">Beauty</div>
+          <div class="pill">Bridal</div>
+          <div class="pill">Soft Editorial</div>
+          <div class="pill">Los Angeles</div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="https://www.instagram.com/julia_mod8/">Book via Instagram</a>
+          <a class="button secondary" href="https://www.instagram.com/vaganova_juliaa/">Personal Page</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/beauty-hat-bw.jpg" alt="Julia in a dramatic black hat">
+        <div class="hero-note">
+          <strong>Positioning Angle</strong>
+          This version is the easiest to send to a brand, photographer, or bridal contact because it feels instantly polished and easy to place.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <p>
+          The image mix here is intentionally narrow: strong portraits, sculpted full-length frames, and light cinematic atmosphere. It keeps the page elegant and commercially legible.
+        </p>
+      </div>
+      <div class="masonry">
+        <figure>
+          <img src="assets/colonnade-coat.jpg" alt="Julia walking through columns in a brown coat">
+          <figcaption>Outerwear / cinematic elegance</figcaption>
+        </figure>
+        <div class="stack">
+          <figure>
+            <img src="assets/headshot-warm.jpg" alt="Warm headshot portrait of Julia">
+            <figcaption>Beauty closeup / clean market-facing portrait</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/studio-body-1.jpg" alt="Julia in black studio set">
+            <figcaption>Body line / movement / studio polish</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="masonry">
+        <div class="stack">
+          <figure>
+            <img src="assets/studio-stool-bw.jpg" alt="Black and white studio portrait">
+            <figcaption>Editorial black-and-white / edge without losing softness</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/beach-bw.jpg" alt="Julia in a white dress on the beach">
+            <figcaption>Atmosphere / romance / destination-ready mood</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <img src="assets/studio-body-2.jpg" alt="Julia in fringe jacket studio set">
+          <figcaption>Light fashion energy / direct-booking versatility</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="contact">
+        <div>
+          <h2>Inquiry</h2>
+          <p>
+            Best used as a clean portfolio link in text or email when the goal is to look immediately polished and easy to book.
+          </p>
+          <div class="tiny">@julia_mod8 / Model page • @vaganova_juliaa / Personal page</div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="https://www.instagram.com/julia_mod8/">Open Instagram</a>
+          <a class="button secondary" href="index.html">View All Concepts</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
