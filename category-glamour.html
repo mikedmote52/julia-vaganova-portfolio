@@ -35,6 +35,18 @@
     .eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;color:#d6a768;margin-bottom:12px}
     h1,h2{margin:0;font-family:"Bodoni Moda",serif;line-height:.94}
     h1{font-size:clamp(3.4rem,7vw,6.4rem);max-width:7ch;margin-bottom:16px}
+    h1 .mini{
+      display:block;
+      font-size:.22em;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-family:"Archivo",sans-serif;
+      color:#d6a768;
+      margin-bottom:.55em;
+    }
+    h1 .glam{
+      display:block;
+    }
     h2{font-size:clamp(2rem,4vw,3.2rem)}
     p{margin:0;color:var(--muted);line-height:1.82}
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
@@ -67,7 +79,7 @@
       <div class="copy">
         <div>
           <div class="eyebrow">Glamour Edit</div>
-          <h1>Stronger styling. Sharper entrance.</h1>
+          <h1><span class="mini">After Dark</span><span class="glam">Sharper entrance.</span></h1>
           <p>This page is built around the images where Julia feels most elevated, styled, and visually commanding. It is meant for clients looking for eveningwear, event-facing polish, or a more fashion-forward glamour read.</p>
           <div class="stats">
             <div class="stat"><strong>Mood</strong>luxury, impact, confidence</div>

@@ -36,6 +36,13 @@
     .eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;color:var(--muted);margin-bottom:12px}
     h1,h2{font-family:"Cormorant Garamond",serif;margin:0;line-height:.92}
     h1{font-size:clamp(3.6rem,8vw,6.6rem);max-width:8ch;margin-bottom:14px}
+    h1 .veil{
+      display:block;
+      font-style:italic;
+    }
+    h1 .veil:last-child{
+      margin-left:.5em;
+    }
     h2{font-size:clamp(2.2rem,4vw,3.6rem)}
     p{margin:0;color:var(--muted);line-height:1.82}
     .hero-image img,.frame img{width:100%;height:100%;display:block;object-fit:cover}
@@ -73,7 +80,7 @@
       <div class="intro">
         <div>
           <div class="eyebrow">Bridal Portfolio</div>
-          <h1>Elegant, romantic, and ceremony-ready.</h1>
+          <h1><span class="veil">Elegant.</span><span class="veil">Ceremony-ready.</span></h1>
           <p>Julia's bridal page is designed around softness, polish, and grace. The images here lead with the qualities bridal clients usually need first: clean beauty, refined posture, white styling, and a romantic on-camera presence that feels natural rather than overworked.</p>
           <div class="meta">
             <div class="pill">bridal fashion</div>

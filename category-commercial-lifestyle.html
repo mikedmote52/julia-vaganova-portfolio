@@ -55,6 +55,18 @@
     }
     h1,h2{margin:0;font-family:"Fraunces",serif;line-height:1}
     h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:14px;max-width:10ch}
+    h1 .label{
+      display:block;
+      font-family:"Public Sans",sans-serif;
+      font-size:.23em;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:.55em;
+    }
+    h1 .plain{
+      display:block;
+    }
     h2{font-size:clamp(1.8rem,3vw,2.4rem)}
     p{margin:0;color:var(--muted);line-height:1.8}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
@@ -127,7 +139,7 @@
       </div>
       <div class="contact-panel">
         <div class="eyebrow">Natural / Casting Basics</div>
-        <h1>Low styling, clear read, no wasted signal.</h1>
+        <h1><span class="label">Casting Basics</span><span class="plain">Low styling.</span><span class="plain">Clear read.</span></h1>
         <p>This page is built like a casting tool. It favors clean light, straightforward presentation, and easy comparison over mood or concept. The goal is to help a client understand Julia quickly and accurately.</p>
         <div class="spec-grid">
           <div class="spec"><strong>Best For</strong>casting, submissions, first looks</div>

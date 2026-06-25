@@ -72,6 +72,22 @@
     }
     h1,h2{margin:0;font-family:"Italiana",serif;line-height:.94;letter-spacing:.01em}
     h1{font-size:clamp(3.4rem,8vw,6.2rem);margin-bottom:12px;max-width:8ch}
+    h1 .whisper{
+      display:block;
+      font-size:.24em;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-family:"DM Sans",sans-serif;
+      color:var(--muted);
+      margin-bottom:.5em;
+    }
+    h1 .hero-word{
+      display:block;
+      font-size:1.05em;
+    }
+    h1 .hero-word:last-child{
+      margin-left:.42em;
+    }
     h2{font-size:clamp(2rem,4vw,3rem)}
     p{margin:0;color:var(--muted);line-height:1.84}
     .rail{
@@ -153,7 +169,7 @@
         <img src="assets/headshot-warm.jpg" alt="Julia beauty headshot">
         <div class="title-card">
           <div class="eyebrow">Beauty Portfolio</div>
-          <h1>Clean beauty, strong structure, real polish.</h1>
+          <h1><span class="whisper">Beauty Portfolio</span><span class="hero-word">Clean beauty,</span><span class="hero-word">real polish.</span></h1>
           <p>This page behaves like a beauty deck, not a generic portfolio page. It is designed to keep the eye on Julia's face, skin, and expression first.</p>
         </div>
       </div>

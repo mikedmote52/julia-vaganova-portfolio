@@ -40,6 +40,20 @@
       letter-spacing:-.02em;
     }
     h1{font-size:clamp(3.4rem,8vw,6.2rem);margin-bottom:16px;max-width:7ch}
+    h1 .overline{
+      display:block;
+      font-size:.22em;
+      letter-spacing:.18em;
+      margin-bottom:.18em;
+      color:var(--muted);
+    }
+    h1 .impact{
+      display:block;
+      font-size:1em;
+    }
+    h1 .impact:last-child{
+      color:#8a5a27;
+    }
     h2{font-size:clamp(2rem,4vw,3rem)}
     p{margin:0;color:var(--muted);line-height:1.82}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
@@ -73,7 +87,7 @@
       <div class="copy">
         <div>
           <div class="eyebrow">Athletic Portfolio</div>
-          <h1>Movement, line, and physical confidence.</h1>
+          <h1><span class="overline">Athletic Appeal</span><span class="impact">Movement.</span><span class="impact">Line.</span><span class="impact">Confidence.</span></h1>
           <p>This page is designed around the images where Julia looks strongest in motion and body-led styling. It is built for clients who want tone, athletic shape, energy, and a more active studio read rather than softness alone.</p>
         </div>
         <div class="actions">

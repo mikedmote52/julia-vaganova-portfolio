@@ -36,6 +36,13 @@
     .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--muted);margin-bottom:10px}
     h1,h2{margin:0;font-family:"Spectral",serif;line-height:.96}
     h1{font-size:clamp(3rem,7vw,5.2rem);margin-bottom:16px;max-width:8ch}
+    h1 .gentle{
+      display:block;
+    }
+    h1 .gentle:last-child{
+      font-size:.86em;
+      margin-left:.35em;
+    }
     h2{font-size:clamp(2rem,4vw,3rem)}
     p{margin:0;color:var(--muted);line-height:1.84}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
@@ -63,7 +70,7 @@
       </div>
       <div class="copy">
         <div class="eyebrow">Animal Portfolio</div>
-        <h1>Calm, connected, and fully present in the frame.</h1>
+        <h1><span class="gentle">Calm. Connected.</span><span class="gentle">Fully present.</span></h1>
         <p>This page is built around trust and control. The strongest animal images in Julia's portfolio are not only about the dog itself, but about the way she holds the frame: calm, elegant, emotionally engaged, and believable in a shared scene.</p>
         <div class="notes">
           <div class="note"><strong>Strength</strong>Comfortable physical presence with animals</div>
